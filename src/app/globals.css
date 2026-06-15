@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f9f8f2;
+  --foreground: #1c1c1b;
+  --accent: #4a7c23;
+  --accent-dark: #3a621b;
+  --accent-light: #e8f0df;
+  --muted: #6b6b67;
+  --border: #d9d7ce;
+  --card: #ffffff;
+  --footer: #f1f0ea;
+  --danger: #b91c1c;
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-accent-light: var(--accent-light);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-footer: var(--footer);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Focus states */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Monospace labels for technical data */
+.mono-label {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Hide horizontal overflow */
+html,
+body {
+  overflow-x: hidden;
+}

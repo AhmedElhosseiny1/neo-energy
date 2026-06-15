@@ -1,0 +1,318 @@
+import type { Product, TimelineOption } from "@/types";
+
+export type { Product };
+
+export const timelineOptions: TimelineOption[] = [
+  { id: "urgent", label: "URGENT", sublabel: "3 MONTHS" },
+  { id: "q3-q4", label: "Q3-Q4", sublabel: "6 MONTHS" },
+  { id: "fy2025", label: "FY 2025", sublabel: "NEXT YEAR" },
+  { id: "planning", label: "PLANNING", sublabel: "EXPLORATORY" },
+];
+
+export const catalogProducts: Product[] = [
+  {
+    id: "inv-x400",
+    slug: "industrial-inverters",
+    sku: "NE-INV-X400",
+    category: "POWER CONVERSION",
+    name: "Industrial Inverters",
+    shortDescription:
+      "Three-phase string inverters designed for maximum efficiency in harsh environments. Supports modular scaling and remote telemetry.",
+    fullDescription:
+      "NE-X400 Industrial Inverter. Engineered for mission-critical grid stabilization and high-density energy storage systems. The X400 series offers industry-leading efficiency for large-scale industrial operations.",
+    image: "/images/industrial-inverter.jpg",
+    specs: [
+      { label: "Nominal AC Power", value: "400 kW @ 40°C" },
+      { label: "Max DC Voltage", value: "1500 Vdc" },
+      { label: "MPPT Voltage Range", value: "625 - 1300 Vdc" },
+      { label: "Rated AC Voltage", value: "600 Vac (3-Phase)" },
+      { label: "Peak Efficiency", value: "99.2%" },
+      { label: "Power Output", value: "400kW" },
+      { label: "Voltage Range", value: "600V - 1500V" },
+      { label: "Cooling Type", value: "Liquid Managed" },
+      { label: "Communication Protocols", value: "Modbus TCP/IP, CANopen" },
+      { label: "Operating Temperature", value: "-25°C to +60°C" },
+      { label: "Enclosure Rating", value: "IP66 / NEMA 4X" },
+      { label: "Total Harmonic Distortion", value: "< 3% at rated power" },
+    ],
+    powerKw: 400,
+    capacityKwh: 0,
+    footprintM2: 2.4,
+    inputRequirements: "3-Phase 480V",
+    leadTime: "6-8 Weeks",
+    industries: ["Industrial Manufacturing", "Utility Scale"],
+    certifications: ["IEC 62109", "UL 1741 SA"],
+    minPowerKw: 100,
+    maxPowerKw: 1000,
+    compatibleWith: ["batt-lfp", "ctrl-hub", "bess-200"],
+  },
+  {
+    id: "lfp-m50",
+    slug: "lfp-battery-systems",
+    sku: "NE-LFP-M50",
+    category: "ENERGY STORAGE",
+    name: "LFP Battery Systems",
+    shortDescription:
+      "Liquid-cooled Lithium Iron Phosphate storage racks featuring 10,000+ cycle life and integrated BMS for grid-stabilization services.",
+    fullDescription:
+      "High-density lithium iron phosphate cells for long-cycle reliability. Modular rack architecture enables scalable energy storage from commercial to utility-scale deployments.",
+    image: "/images/lfp-battery.jpg",
+    specs: [
+      { label: "Energy Capacity", value: "50 kWh / unit" },
+      { label: "Cycle Life", value: "8000+ Cycles" },
+      { label: "Cell Chemistry", value: "Lithium Iron Phosphate (LFP)" },
+      { label: "Nominal Voltage", value: "768 Vdc" },
+      { label: "Operating Temperature", value: "0°C to +50°C" },
+      { label: "Enclosure Rating", value: "IP55" },
+      { label: "Round-Trip Efficiency", value: "> 95%" },
+      { label: "Configuration", value: "Configurable Rack System" },
+    ],
+    powerKw: 0,
+    capacityKwh: 50,
+    footprintM2: 1.2,
+    inputRequirements: "3-Phase 480V",
+    leadTime: "10-12 Weeks",
+    industries: ["Industrial Manufacturing", "Commercial Real Estate", "Utility Scale"],
+    certifications: ["UL 9540A", "IEC 62619"],
+    minPowerKw: 50,
+    maxPowerKw: 5000,
+    compatibleWith: ["inv-x400", "ctrl-hub", "bess-200"],
+  },
+  {
+    id: "sol-bifi",
+    slug: "pv-infrastructure",
+    sku: "CAT-SOL-BIFI",
+    category: "SOLAR",
+    name: "PV Infrastructure",
+    shortDescription:
+      "Bifacial monocrystalline arrays with high-tolerance mounting hardware optimized for utility-scale solar farms.",
+    fullDescription:
+      "High-efficiency bifacial PV modules and structural mounting systems engineered for utility-scale and commercial rooftop installations in demanding climates.",
+    image: "/images/pv-infrastructure.jpg",
+    specs: [
+      { label: "Module Power", value: "650 Wp" },
+      { label: "Bifaciality Factor", value: "> 80%" },
+      { label: "Module Efficiency", value: "21.8%" },
+      { label: "Operating Temperature", value: "-40°C to +85°C" },
+      { label: "Mounting Type", value: "Single-axis tracker compatible" },
+      { label: "Warranty", value: "30-year linear performance" },
+    ],
+    powerKw: 650,
+    capacityKwh: 0,
+    footprintM2: 3.2,
+    inputRequirements: "DC 1500V",
+    leadTime: "8-10 Weeks",
+    industries: ["Utility Scale", "Agriculture & Remote", "Commercial Real Estate"],
+    certifications: ["IEC 61215", "IEC 61730"],
+    minPowerKw: 100,
+    maxPowerKw: 10000,
+    compatibleWith: ["inv-x400", "mgrd-os"],
+  },
+  {
+    id: "bess-200",
+    slug: "containerized-bess",
+    sku: "CAT-BESS-200",
+    category: "ENERGY STORAGE",
+    name: "Containerized BESS",
+    shortDescription:
+      "Turnkey Battery Energy Storage Systems (BESS) housed in weather-resistant 20ft enclosures for rapid on-site deployment.",
+    fullDescription:
+      "Pre-integrated containerized energy storage delivering 200 kWh to multi-MWh capacity. Designed for rapid deployment, grid services, and industrial peak shaving.",
+    image: "/images/containerized-bess.jpg",
+    specs: [
+      { label: "Container Capacity", value: "200 kWh / 20ft" },
+      { label: "Nominal Power", value: "100 kW continuous" },
+      { label: "Response Time", value: "< 100 ms" },
+      { label: "Climate Control", value: "HVAC with fire suppression" },
+      { label: "Grid Connection", value: "480 Vac 3-Phase" },
+      { label: "Deployment", value: "Skid-mounted, plug-and-play" },
+    ],
+    powerKw: 100,
+    capacityKwh: 200,
+    footprintM2: 15,
+    inputRequirements: "3-Phase 480V",
+    leadTime: "12-14 Weeks",
+    industries: ["Utility Scale", "Industrial Manufacturing"],
+    certifications: ["UL 9540", "IEC 62933"],
+    minPowerKw: 100,
+    maxPowerKw: 5000,
+    compatibleWith: ["inv-x400", "lfp-m50", "ctrl-hub"],
+  },
+  {
+    id: "evc-350",
+    slug: "dc-fast-chargers",
+    sku: "CAT-EVC-350",
+    category: "MOBILITY",
+    name: "DC Fast Chargers",
+    shortDescription:
+      "Ultra-high-speed DC charging infrastructure with dynamic load balancing for commercial fleet and public networks.",
+    fullDescription:
+      "Scalable DC fast charging infrastructure for logistics fleets, public charging hubs, and industrial vehicle depots with intelligent load management.",
+    image: "/images/dc-fast-chargers.jpg",
+    specs: [
+      { label: "Max Output Power", value: "350 kW" },
+      { label: "Connector Types", value: "CCS1, CCS2, CHAdeMO" },
+      { label: "Efficiency", value: "> 96%" },
+      { label: "Load Balancing", value: "Dynamic, site-aware" },
+      { label: "User Interface", value: "15-inch industrial touchscreen" },
+      { label: "Network", value: "OCPP 2.0.1 ready" },
+    ],
+    powerKw: 350,
+    capacityKwh: 0,
+    footprintM2: 1.5,
+    inputRequirements: "3-Phase 480V",
+    leadTime: "6-8 Weeks",
+    industries: ["Commercial Real Estate", "Industrial Manufacturing"],
+    certifications: ["UL 2594", "IEC 61851"],
+    minPowerKw: 50,
+    maxPowerKw: 1000,
+    compatibleWith: ["mgrd-os", "ctrl-hub"],
+  },
+  {
+    id: "mgrd-os",
+    slug: "microgrid-controllers",
+    sku: "CAT-MGRD-OS",
+    category: "CONTROL",
+    name: "Microgrid Controllers",
+    shortDescription:
+      "Advanced software-hardware integration for autonomous microgrid management, load shedding, and peak shaving optimization.",
+    fullDescription:
+      "Industrial-grade control platform for autonomous microgrid operation. Orchestrates generation, storage, and loads with AI-driven forecasting and real-time optimization.",
+    image: "/images/microgrid-controller.jpg",
+    specs: [
+      { label: "Control Loops", value: "< 10 ms" },
+      { label: "Protocols", value: "Modbus, DNP3, IEC 61850" },
+      { label: "Interfaces", value: "Ethernet, Fiber, 4G/LTE" },
+      { label: "Redundancy", value: "Hot-standby optional" },
+      { label: "Power Quality", value: "IEEE 1547 compliant" },
+      { label: "Software", value: "Edge + cloud orchestration" },
+    ],
+    powerKw: 0,
+    capacityKwh: 0,
+    footprintM2: 0.8,
+    inputRequirements: "Single Phase 120/240V",
+    leadTime: "4-6 Weeks",
+    industries: ["Utility Scale", "Agriculture & Remote", "Data Center"],
+    certifications: ["IEC 61850", "IEEE 1547"],
+    minPowerKw: 50,
+    maxPowerKw: 5000,
+    compatibleWith: ["inv-x400", "sol-bifi", "evc-350", "bess-200"],
+  },
+];
+
+export const compatibleComponents: Product[] = [
+  {
+    id: "b80-batt",
+    slug: "ne-b80-high-c-battery",
+    sku: "NE-B80-HC",
+    category: "COMPATIBLE",
+    name: "NE-B80 High-C Battery Unit",
+    shortDescription:
+      "High-current battery unit optimized for rapid charge and discharge cycles in industrial environments.",
+    fullDescription:
+      "Compact high-C rate battery unit for applications requiring rapid response and high power density.",
+    image: "/images/compatible-battery.jpg",
+    specs: [
+      { label: "Capacity", value: "80 kWh" },
+      { label: "Max Discharge", value: "2C continuous" },
+      { label: "Cycle Life", value: "6000+ cycles" },
+    ],
+    powerKw: 0,
+    capacityKwh: 80,
+    footprintM2: 1.5,
+    inputRequirements: "3-Phase 480V",
+    leadTime: "8-10 Weeks",
+    industries: ["Industrial Manufacturing"],
+    certifications: ["UL 9540A"],
+    minPowerKw: 50,
+    maxPowerKw: 1000,
+  },
+  {
+    id: "gateway-pro",
+    slug: "neo-connect-gateway-pro",
+    sku: "NE-GW-PRO",
+    category: "COMPATIBLE",
+    name: "Neo Connect Gateway Pro",
+    shortDescription:
+      "Industrial IoT gateway for secure telemetry, protocol translation, and cloud connectivity.",
+    fullDescription:
+      "Ruggedized connectivity gateway bridging field devices to enterprise systems with edge computing capabilities.",
+    image: "/images/compatible-gateway.jpg",
+    specs: [
+      { label: "Protocols", value: "Modbus, BACnet, OPC-UA" },
+      { label: "Connectivity", value: "Ethernet, WiFi, LTE" },
+      { label: "Security", value: "TLS 1.3, VPN" },
+    ],
+    powerKw: 0,
+    capacityKwh: 0,
+    footprintM2: 0.3,
+    inputRequirements: "24Vdc / PoE",
+    leadTime: "2-3 Weeks",
+    industries: ["Industrial Manufacturing", "Data Center"],
+    certifications: ["FCC", "CE"],
+    minPowerKw: 0,
+    maxPowerKw: 0,
+  },
+  {
+    id: "sg-switchgear",
+    slug: "ne-sg-industrial-switchgear",
+    sku: "NE-SG-IND",
+    category: "COMPATIBLE",
+    name: "NE-SG Industrial Switchgear",
+    shortDescription:
+      "Medium-voltage switchgear designed for safe isolation and protection of industrial power systems.",
+    fullDescription:
+      "Heavy-duty industrial switchgear providing reliable protection and switching for critical power distribution.",
+    image: "/images/compatible-switchgear.jpg",
+    specs: [
+      { label: "Voltage Rating", value: "up to 36 kV" },
+      { label: "Short-Circuit Current", value: "up to 40 kA" },
+      { label: "Standard", value: "IEC 62271" },
+    ],
+    powerKw: 0,
+    capacityKwh: 0,
+    footprintM2: 4,
+    inputRequirements: "Medium Voltage",
+    leadTime: "10-12 Weeks",
+    industries: ["Utility Scale", "Industrial Manufacturing"],
+    certifications: ["IEC 62271"],
+    minPowerKw: 100,
+    maxPowerKw: 10000,
+  },
+  {
+    id: "mv-transformer",
+    slug: "step-up-transformer-mv",
+    sku: "NE-TR-MV",
+    category: "COMPATIBLE",
+    name: "Step-Up Transformer (MV)",
+    shortDescription:
+      "Oil-immersed and dry-type step-up transformers for utility interconnection and medium-voltage distribution.",
+    fullDescription:
+      "Custom-engineered medium-voltage transformers for connecting distributed energy resources to the grid.",
+    image: "/images/compatible-transformer.jpg",
+    specs: [
+      { label: "Power Range", value: "1 - 50 MVA" },
+      { label: "Voltage Class", value: "up to 72.5 kV" },
+      { label: "Cooling", value: "ONAN / ONAF / Dry-type" },
+    ],
+    powerKw: 0,
+    capacityKwh: 0,
+    footprintM2: 20,
+    inputRequirements: "Medium Voltage",
+    leadTime: "14-16 Weeks",
+    industries: ["Utility Scale"],
+    certifications: ["IEEE C57", "IEC 60076"],
+    minPowerKw: 1000,
+    maxPowerKw: 50000,
+  },
+];
+
+export const allProducts = [...catalogProducts, ...compatibleComponents];
+
+export function getProductBySlug(slug: string): Product | undefined {
+  return allProducts.find((p) => p.slug === slug);
+}
+
+export function getProductById(id: string): Product | undefined {
+  return allProducts.find((p) => p.id === id);
+}
