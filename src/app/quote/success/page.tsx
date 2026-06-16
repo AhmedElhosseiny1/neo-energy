@@ -32,9 +32,9 @@ export default function QuoteSuccessPage() {
           Request Successfully Submitted
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-muted">
-          Your industrial energy optimization request has been received. Our
-          engineering team is already analyzing your technical requirements to provide
-          a precision-engineered solution.
+          Your solar energy project request has been received. Our engineering
+          team is already reviewing your technical requirements to prepare a
+          tailored proposal for your site across Egypt and the MENA region.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Button href="/quote/preview" icon={<FileText className="h-4 w-4" />}>
@@ -51,45 +51,45 @@ export default function QuoteSuccessPage() {
           {
             phase: "Phase 01",
             title: "Engineering Review",
-            desc: "Our senior engineers evaluate system compatibility and load requirements based on your SKU selection.",
+            desc: "Our engineers evaluate product compatibility, site conditions, and load requirements based on your selected components.",
             meta: "24-48h Response",
             icon: Clock,
           },
           {
             phase: "Phase 02",
             title: "Technical Consultation",
-            desc: "A dedicated specialist will reach out to discuss grid integration and site-specific installation variables.",
+            desc: "A dedicated specialist will reach out to discuss system design, delivery logistics, and installation planning.",
             meta: "Dedicated Advisor",
             icon: User,
           },
           {
             phase: "Phase 03",
             title: "Final Proposal",
-            desc: "Receive a comprehensive technical dossier including efficiency projections and integration blueprints.",
+            desc: "Receive a comprehensive technical dossier including product recommendations and project next steps.",
             meta: "PDF Dossier",
             icon: FileText,
           },
         ].map((card) => (
           <div
             key={card.phase}
-            className="rounded-2xl border border-border bg-white p-6 shadow-sm"
+            className="rounded-2xl border border-border bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
           >
             <span className="mono-label text-accent">{card.phase}</span>
             <h3 className="mt-4 text-xl font-semibold">{card.title}</h3>
             <p className="mt-2 text-sm text-muted">{card.desc}</p>
-            <p className="mt-4 inline-flex items-center gap-2 rounded-lg bg-accent-light px-3 py-1 text-xs font-medium">
+            <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-accent-light px-3 py-1 text-xs font-medium">
               <card.icon className="h-3 w-3" /> {card.meta}
             </p>
           </div>
         ))}
       </div>
 
-      <div className="mt-10 grid gap-8 rounded-2xl border border-border bg-white p-8 shadow-sm md:grid-cols-2">
+      <div className="mt-10 grid gap-8 rounded-2xl border border-border bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md md:grid-cols-2">
         <div>
           <h2 className="text-xl font-semibold">Further Resources</h2>
           <p className="mt-3 text-sm text-muted">
-            While our team prepares your technical brief, explore our engineering
-            standards and comprehensive product range.
+            While our team prepares your technical brief, explore our
+            engineering standards and comprehensive product range.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button href="/quote/preview" icon={<FileText className="h-4 w-4" />}>
@@ -103,21 +103,21 @@ export default function QuoteSuccessPage() {
         <div className="md:border-l md:border-border md:pl-8">
           <h2 className="text-xl font-semibold">Urgent Inquiries</h2>
           <p className="mt-3 text-sm text-muted">
-            Does your project require immediate technical intervention? Contact our
-            industrial desk.
+            Does your project require immediate technical intervention? Contact
+            our industrial desk.
           </p>
           <div className="mt-6 space-y-3 text-sm">
             <a
-              href="tel:+1800NEOENERGY"
+              href="tel:+201208434441"
               className="flex items-center gap-2 text-accent hover:text-accent-dark"
             >
-              <Phone className="h-4 w-4" /> +1 (800) NEO-ENERGY
+              <Phone className="h-4 w-4" /> +20 120 843 4441
             </a>
             <a
-              href="mailto:engineering@neoenergy.solutions"
+              href="mailto:info@neo-es.com"
               className="flex items-center gap-2 text-accent hover:text-accent-dark"
             >
-              <Mail className="h-4 w-4" /> engineering@neoenergy.solutions
+              <Mail className="h-4 w-4" /> info@neo-es.com
             </a>
           </div>
         </div>
@@ -126,7 +126,7 @@ export default function QuoteSuccessPage() {
       <div className="relative mt-12 overflow-hidden rounded-2xl">
         <Image
           src="/images/facility.jpg"
-          alt="Neo Energy Munich R&D facility"
+          alt="Neo Energy project facility"
           width={1200}
           height={500}
           className="w-full object-cover"
@@ -135,7 +135,7 @@ export default function QuoteSuccessPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
         <div className="absolute bottom-8 left-8 text-white">
           <span className="mono-label text-accent-light">
-            FACILITY 04 - MUNICH R&D
+            MENA SOLAR PROJECTS
           </span>
           <p className="mt-2 text-2xl font-semibold">
             Precision. Reliability. Sustainability.

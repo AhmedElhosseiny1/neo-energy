@@ -5,7 +5,7 @@ import { catalogProducts } from "@/data/products";
 export const metadata: Metadata = {
   title: "Shop | Neo Energy Solutions",
   description:
-    "Browse industrial energy products: inverters, battery systems, PV infrastructure, BESS, chargers, and microgrid controllers.",
+    "Browse solar panels, inverters, batteries, energy storage systems, cables, and street lighting from trusted brands for projects across Egypt and MENA.",
 };
 
 export default function ShopPage() {
@@ -15,8 +15,10 @@ export default function ShopPage() {
         <span className="mono-label text-accent">INDUSTRIAL PRODUCT SHOP</span>
         <h1 className="mt-4 text-4xl font-semibold sm:text-5xl">Shop</h1>
         <p className="mt-4 text-muted">
-          Select components for your project and add them to your cart. Our team
-          will prepare a tailored engineering quotation based on your selection.
+          Select components for your solar project and add them to your cart.
+          Our engineering team will prepare a tailored quotation based on your
+          selection, site conditions, and delivery location across Egypt and the
+          MENA region.
         </p>
       </div>
 

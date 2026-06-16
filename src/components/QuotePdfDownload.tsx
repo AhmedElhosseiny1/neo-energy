@@ -35,7 +35,7 @@ export function QuotePdfDownload({
         />
       }
       fileName={`neo-energy-quote-${referenceId}.pdf`}
-      className="inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-dark"
+      className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:-translate-y-px hover:bg-accent-dark"
     >
       <Download className="h-4 w-4" /> Download PDF
     </PDFDownloadLink>

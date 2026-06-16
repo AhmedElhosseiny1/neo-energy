@@ -5,6 +5,7 @@ import { ShoppingCart, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { useCartStore } from "@/store/useCartStore";
 import { NeoLogo } from "@/components/NeoLogo";
+import { Button } from "@/components/Button";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -20,7 +21,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-16 md:h-[76px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="inline-block">
           <NeoLogo className="h-7 w-auto text-accent" />
         </Link>
@@ -30,7 +31,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-foreground transition-colors hover:text-accent"
+              className="text-sm font-semibold text-foreground transition-colors hover:text-accent"
             >
               {link.label}
             </Link>
@@ -40,7 +41,7 @@ export function Header() {
         <div className="flex items-center gap-4">
           <Link
             href="/cart"
-            className="relative rounded-lg p-2 text-foreground hover:bg-accent-light hover:text-accent"
+            className="relative rounded-full p-2 text-foreground transition-colors hover:bg-accent-light hover:text-accent"
             aria-label="Cart"
           >
             <ShoppingCart className="h-5 w-5" />
@@ -51,16 +52,16 @@ export function Header() {
             )}
           </Link>
 
-          <Link
+          <Button
             href="/quote"
-            className="hidden rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-dark md:inline-block"
+            className="hidden md:inline-flex"
           >
-            Request Solution Quote
-          </Link>
+            Request Quote
+          </Button>
 
           <button
             type="button"
-            className="rounded-lg p-2 md:hidden"
+            className="rounded-full p-2 text-foreground transition-colors hover:bg-accent-light md:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -80,19 +81,19 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-lg py-2 text-sm font-medium"
+                className="rounded-xl px-3 py-2 text-sm font-semibold text-foreground transition-colors hover:bg-accent-light hover:text-accent"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
-            <Link
+            <Button
               href="/quote"
-              className="mt-2 rounded-lg bg-accent px-5 py-3 text-center text-sm font-medium text-white"
+              className="mt-2"
               onClick={() => setMobileOpen(false)}
             >
-              Request Solution Quote
-            </Link>
+              Request Quote
+            </Button>
           </nav>
         </div>
       )}

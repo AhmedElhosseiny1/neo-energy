@@ -1,17 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f9f8f2;
-  --foreground: #1c1c1b;
-  --accent: #4a7c23;
-  --accent-dark: #3a621b;
-  --accent-light: #e8f0df;
-  --muted: #6b6b67;
-  --border: #d9d7ce;
-  --card: #ffffff;
-  --footer: #f1f0ea;
+  --background: #F7F3E8;
+  --foreground: #111513;
+  --accent: #183C2E;
+  --accent-dark: #101B16;
+  --accent-light: #EEF6EA;
+  --muted: #66736D;
+  --border: #DDE5DC;
+  --card: #FFFFFF;
+  --footer: #F7F3E8;
   --danger: #b91c1c;
-  --radius: 0.75rem;
+  --lime: #C8F06A;
+  --forest-600: #2E6B4F;
+  --radius: 1.5rem;
+
+  --shadow-card: 0 12px 40px rgba(16, 27, 22, 0.06);
+  --shadow-elevated: 0 18px 60px rgba(16, 27, 22, 0.10);
 }
 
 @theme inline {
@@ -25,8 +30,12 @@
   --color-card: var(--card);
   --color-footer: var(--footer);
   --color-danger: var(--danger);
-  --font-sans: var(--font-geist-sans);
+  --color-lime: var(--lime);
+  --color-forest-600: var(--forest-600);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
+  --shadow-card: var(--shadow-card);
+  --shadow-elevated: var(--shadow-elevated);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -38,7 +47,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 /* Focus states */

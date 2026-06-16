@@ -15,7 +15,7 @@ export function ProductCard({ product, showAddToCart = true }: ProductCardProps)
   const addItem = useCartStore((s) => s.addItem);
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-shadow hover:shadow-md">
+    <article className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-md">
       <Link
         href={`/products/${product.slug}`}
         className="relative aspect-[4/3] overflow-hidden"
@@ -45,7 +45,7 @@ export function ProductCard({ product, showAddToCart = true }: ProductCardProps)
           <div className="mt-6 flex items-center gap-3">
             <Link
               href={`/products/${product.slug}`}
-              className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg border border-border px-4 py-2.5 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
+              className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-border bg-transparent px-5 py-3 text-sm font-semibold text-accent transition-all duration-200 hover:-translate-y-px hover:border-accent"
             >
               Configure Solution
               <SlidersHorizontal className="h-4 w-4" />
@@ -53,7 +53,7 @@ export function ProductCard({ product, showAddToCart = true }: ProductCardProps)
             <button
               type="button"
               onClick={() => addItem(product.id)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent text-white transition-colors hover:bg-accent-dark"
+              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent text-white transition-all duration-200 hover:-translate-y-px hover:bg-accent-dark"
               aria-label={`Add ${product.name} to cart`}
             >
               <ShoppingCart className="h-4 w-4" />

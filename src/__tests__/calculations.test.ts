@@ -5,16 +5,16 @@ import { allProducts } from "@/data/products";
 describe("calculateProjectScope", () => {
   it("sums power, capacity, and footprint by quantity", () => {
     const items = [
-      { productId: "inv-x400", quantity: 2 },
-      { productId: "lfp-m50", quantity: 4 },
+      { productId: "ja-solar-605w", quantity: 2 },
+      { productId: "fla-48300", quantity: 1 },
     ];
 
     const scope = calculateProjectScope(items, allProducts);
 
-    expect(scope.totalPowerOutputKw).toBe(400 * 2); // 800
-    expect(scope.nominalCapacityKwh).toBe(50 * 4); // 200
-    expect(scope.footprintM2).toBe(2.4 * 2 + 1.2 * 4);
-    expect(scope.inputRequirements).toBe("3-Phase 480V");
+    expect(scope.totalPowerOutputKw).toBeCloseTo(0.605 * 2);
+    expect(scope.nominalCapacityKwh).toBe(15 * 1);
+    expect(scope.footprintM2).toBe(0);
+    expect(scope.inputRequirements).toBe("Contact us");
   });
 
   it("returns zero totals for empty basket", () => {

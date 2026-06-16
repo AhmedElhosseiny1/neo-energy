@@ -9,74 +9,91 @@ export interface Service {
 }
 
 export type ServiceIconName =
-  | "ClipboardCheck"
+  | "Sun"
+  | "Droplets"
+  | "FileText"
   | "Wrench"
-  | "Settings"
-  | "ShieldCheck";
+  | "MessageCircle";
 
 export const services: Service[] = [
   {
-    id: "engineering-consulting",
-    slug: "engineering-consulting",
-    title: "Engineering Consulting",
+    id: "on-grid-solar-system-installation",
+    slug: "on-grid-solar-system-installation",
+    title: "On-Grid Solar System Installation",
     shortDescription:
-      "Feasibility studies, load profiling, and system architecture design for industrial energy projects.",
+      "Grid-connected solar systems for homes, businesses, and industrial sites.",
     fullDescription:
-      "Our engineering team analyzes your site load profile, utility tariffs, and operational constraints to design an energy system that meets your reliability and sustainability targets. Deliverables include concept layouts, techno-economic analysis, and risk assessments.",
-    iconName: "ClipboardCheck",
+      "Neo Energy provides grid-connected solar system installation for properties that remain linked to the national electricity grid. Our on-grid solutions help residential, commercial, and industrial customers reduce electricity costs while benefiting from net metering and high-performance solar generation.",
+    iconName: "Sun",
     deliverables: [
-      "Site load profiling",
-      "Techno-economic analysis",
-      "Conceptual system design",
-      "Regulatory roadmap",
+      "Lower electricity costs with net metering",
+      "Efficient generation through high-performance solar panels",
+      "Integration with existing grid infrastructure",
+      "Professional installation and commissioning",
     ],
   },
   {
-    id: "system-integration",
-    slug: "system-integration",
-    title: "System Integration & Installation",
+    id: "solar-pumping-systems-for-agriculture",
+    slug: "solar-pumping-systems-for-agriculture",
+    title: "Solar Pumping Systems for Agriculture",
     shortDescription:
-      "Turnkey integration of inverters, batteries, solar arrays, and control systems for seamless deployment.",
+      "Solar irrigation and pumping solutions for farms and remote locations.",
     fullDescription:
-      "We manage the complete integration lifecycle—from hardware procurement and factory acceptance testing to on-site installation, commissioning, and handover. Our approach minimizes downtime and ensures every subsystem communicates reliably.",
+      "Solar pumping systems are presented as a solution for farmers and agribusinesses seeking stable water access without dependence on diesel generators. These systems provide reliable water supply during sunlight hours, reduce fuel dependency, and support lower-emission agricultural operations.",
+    iconName: "Droplets",
+    deliverables: [
+      "Reliable and sustainable water supply",
+      "Reduced fuel dependency and generator costs",
+      "Lower-emission agricultural operations",
+      "Customized pumping solutions for farm scale and water demand",
+    ],
+  },
+  {
+    id: "power-purchase-agreement",
+    slug: "power-purchase-agreement",
+    title: "Power Purchase Agreement (PPA)",
+    shortDescription:
+      "Enables companies to use solar energy without upfront capital investment.",
+    fullDescription:
+      "Neo Energy offers a PPA model where the client hosts a solar energy system without paying the upfront system cost. The client pays only for the electricity generated, usually below traditional utility rates, while Neo Energy handles installation, operations, monitoring, and maintenance.",
+    iconName: "FileText",
+    deliverables: [
+      "No upfront system cost",
+      "Pay for electricity used at competitive rates",
+      "Long-term energy cost savings",
+      "Maintenance-free operations by Neo Energy",
+      "Flexible contract durations from 10 to 25 years",
+    ],
+  },
+  {
+    id: "engineering-procurement-construction",
+    slug: "engineering-procurement-construction",
+    title: "Engineering, Procurement, and Construction (EPC)",
+    shortDescription: "End-to-end turnkey solar system service.",
+    fullDescription:
+      "Neo Energy describes EPC as an end-to-end turnkey solar system service. We manage every phase of the project—from system design and engineering to procurement of solar panels, inverters, and accessories, followed by professional installation and commissioning.",
     iconName: "Wrench",
     deliverables: [
-      "Hardware procurement",
-      "Factory acceptance testing",
-      "On-site installation",
-      "Commissioning & handover",
+      "System design and engineering",
+      "Procurement of solar panels, inverters, and accessories",
+      "Professional installation and commissioning",
+      "Quality assurance and project handover",
     ],
   },
   {
-    id: "commissioning-testing",
-    slug: "commissioning-testing",
-    title: "Commissioning & Testing",
+    id: "solar-energy-consultation",
+    slug: "solar-energy-consultation",
+    title: "Solar Energy Consultation and Project Development",
     shortDescription:
-      "Performance validation, safety verification, and grid-interconnection support.",
+      "Helping clients assess solar potential, design systems, and manage approvals.",
     fullDescription:
-      "Rigorous commissioning protocols confirm that power quality, protection settings, and control logic match the approved design. We coordinate witness testing with utilities and independent engineers to accelerate energization.",
-    iconName: "Settings",
+      "Consultation services are built around helping clients assess solar potential, design systems, and manage approvals. Our team supports feasibility studies, energy audits, customized system design, and regulatory compliance to move projects from concept to implementation.",
+    iconName: "MessageCircle",
     deliverables: [
-      "Protection & control validation",
-      "Power quality testing",
-      "Utility witness testing",
-      "As-built documentation",
-    ],
-  },
-  {
-    id: "operations-maintenance",
-    slug: "operations-maintenance",
-    title: "Operations & Maintenance",
-    shortDescription:
-      "Long-term service plans, remote monitoring, and preventive maintenance for peak system availability.",
-    fullDescription:
-      "Protect your investment with scheduled maintenance, 24/7 remote monitoring, and rapid incident response. Our O&M programs extend asset life, sustain warranty compliance, and maximize uptime across the project lifecycle.",
-    iconName: "ShieldCheck",
-    deliverables: [
-      "24/7 remote monitoring",
-      "Preventive maintenance schedules",
-      "Spare parts management",
-      "Performance reporting",
+      "Feasibility studies and energy audits",
+      "Customized system design by location, energy needs, and budget",
+      "Regulatory support, permits, grid approvals, and compliance",
+      "Project development guidance from concept to commissioning",
     ],
   },
 ];

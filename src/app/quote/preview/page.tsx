@@ -48,7 +48,7 @@ export default function QuotePreviewPage() {
                 navigator.clipboard.writeText(window.location.href);
               }
             }}
-            className="inline-flex items-center gap-2 rounded-lg border border-border bg-white px-4 py-2 text-sm font-medium transition-colors hover:border-accent"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-sm font-medium transition-all duration-200 hover:-translate-y-px hover:border-accent"
           >
             <Share2 className="h-4 w-4" /> Share with Team
           </button>
@@ -63,7 +63,7 @@ export default function QuotePreviewPage() {
         </div>
       </div>
 
-      <div className="mt-8 border border-border bg-white p-8 shadow-sm">
+      <div className="mt-8 rounded-2xl border border-border bg-white p-8 shadow-sm">
         <div className="flex flex-col justify-between border-b-2 border-accent pb-6 sm:flex-row">
           <div>
             <NeoLogo className="h-12 w-auto text-accent" />
@@ -92,11 +92,11 @@ export default function QuotePreviewPage() {
           </div>
           <div>
             <p className="mono-label">Engineering Contact</p>
-            <p className="font-semibold">Sarah Jenkins, Senior Solutions Architect</p>
-            <p className="text-muted">s.jenkins@neoenergy.com</p>
-            <div className="mt-4 bg-accent-light/40 p-4">
+            <p className="font-semibold">Neo Energy Engineering Team</p>
+            <p className="text-muted">info@neo-es.com</p>
+            <div className="mt-4 rounded-2xl bg-accent-light/40 p-4">
               <p className="mono-label text-accent">Solution Category</p>
-              <p>Industrial Scale BESS (Battery Energy Storage System)</p>
+              <p>Industrial Scale Solar & Energy Storage System</p>
             </div>
           </div>
         </div>
@@ -149,7 +149,7 @@ export default function QuotePreviewPage() {
               {["IEEE 1547-2018", "UL 9540A", "IEC 62109-1/-2"].map((cert) => (
                 <span
                   key={cert}
-                  className="border border-border px-3 py-1 text-xs font-medium"
+                  className="rounded-full border border-border px-3 py-1 text-xs font-medium"
                 >
                   {cert}
                 </span>
@@ -158,13 +158,13 @@ export default function QuotePreviewPage() {
           </div>
           <div>
             <p className="mono-label mb-3">Quality Assurance</p>
-            <span className="border border-accent px-3 py-1 text-xs font-semibold text-accent">
+            <span className="rounded-full border border-accent px-3 py-1 text-xs font-semibold text-accent">
               ISO 9001:2015 CERTIFIED
             </span>
           </div>
         </div>
 
-        <div className="mt-8 border-t border-border bg-accent-light/20 p-4">
+        <div className="mt-8 rounded-2xl bg-accent-light/20 p-4">
           <p className="font-semibold text-accent">Technical Note on Integration</p>
           <p className="mt-1 text-sm text-muted">
             The lead times indicated are estimates based on current supply chain
@@ -176,8 +176,8 @@ export default function QuotePreviewPage() {
         <div className="mt-8 flex flex-col justify-between border-t border-border pt-6 text-xs text-muted sm:flex-row">
           <div>
             <p className="font-semibold text-foreground">Neo Energy Solutions</p>
-            <p>Precision Industrial Power Systems</p>
-            <p>Zurich • Berlin • Singapore</p>
+            <p>Renewable Energy Solutions</p>
+            <p>Egypt • Levant • North Africa</p>
           </div>
           <div className="mt-2 sm:mt-0">
             <p>© 2024 Neo Energy Solutions. All Rights Reserved.</p>

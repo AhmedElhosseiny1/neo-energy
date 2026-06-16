@@ -56,26 +56,28 @@ export default function ConfigurePage() {
       <div className="mt-12 grid gap-12 lg:grid-cols-[1fr_1.5fr]">
         {/* Left side */}
         <div>
-          <h1 className="text-3xl font-semibold">
-            Define Your Industrial <span className="text-accent">Ecosystem</span>.
+          <span className="mono-label text-accent">PROJECT CONFIGURATION</span>
+          <h1 className="mt-4 text-3xl font-semibold">
+            Define Your Solar <span className="text-accent">Ecosystem</span>.
           </h1>
           <p className="mt-4 leading-relaxed text-muted">
-            Provide high-level technical parameters to help our engineers architect a
-            customized energy storage and distribution solution tailored to your site
-            specifications.
+            Provide high-level technical parameters to help our engineers size
+            the right solar panels, inverters, batteries, and balance-of-system
+            components for your site across Egypt and the MENA region.
           </p>
 
           <div className="mt-10 rounded-2xl border border-border bg-accent-light/30 p-6">
             <h2 className="mono-label text-accent">Technical Assistance</h2>
             <blockquote className="mt-4 italic leading-relaxed text-foreground">
-              &ldquo;Our algorithms process your industry type and project size to
-              recommend the optimal battery chemistry and inverter topology.&rdquo;
+              &ldquo;Our team reviews your industry type, project size, and
+              location to recommend the optimal panel configuration, inverter
+              topology, and storage chemistry for MENA climate conditions.&rdquo;
             </blockquote>
             <div className="mt-6 flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent text-white">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-white">
                 <Users className="h-5 w-5" />
               </span>
-              <span className="text-sm font-medium">System Architect AI</span>
+              <span className="text-sm font-medium">Neo Energy Engineering Team</span>
             </div>
           </div>
         </div>
@@ -83,7 +85,7 @@ export default function ConfigurePage() {
         {/* Form */}
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="rounded-2xl border border-border bg-white p-6 shadow-sm sm:p-10"
+          className="rounded-2xl border border-border bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md sm:p-10"
         >
           <Field
             label="Industry Type"
@@ -95,7 +97,7 @@ export default function ConfigurePage() {
               <select
                 id="industryType"
                 {...register("industryType")}
-                className="w-full appearance-none rounded-lg border border-border bg-white px-4 py-3 text-sm focus:border-accent focus:outline-none"
+                className="w-full appearance-none rounded-xl border border-border bg-white px-4 py-3 text-sm focus:border-accent focus:outline-none"
               >
                 <option value="">Select industry sector</option>
                 {INDUSTRY_OPTIONS.map((industry) => (
@@ -122,7 +124,7 @@ export default function ConfigurePage() {
                 type="text"
                 placeholder="e.g. 2.5 MW"
                 {...register("projectSize")}
-                className="w-full rounded-lg border border-border px-4 py-3 text-sm focus:border-accent focus:outline-none"
+                className="w-full rounded-xl border border-border px-4 py-3 text-sm focus:border-accent focus:outline-none"
               />
             </Field>
             <Field
@@ -136,7 +138,7 @@ export default function ConfigurePage() {
                 type="text"
                 placeholder="Max Peak Load"
                 {...register("powerRequirements")}
-                className="w-full rounded-lg border border-border px-4 py-3 text-sm focus:border-accent focus:outline-none"
+                className="w-full rounded-xl border border-border px-4 py-3 text-sm focus:border-accent focus:outline-none"
               />
             </Field>
           </div>
@@ -154,7 +156,7 @@ export default function ConfigurePage() {
                 type="text"
                 placeholder="City, Country or Coordinates"
                 {...register("installationLocation")}
-                className="w-full rounded-lg border border-border py-3 pl-12 pr-4 text-sm focus:border-accent focus:outline-none"
+                className="w-full rounded-xl border border-border py-3 pl-12 pr-4 text-sm focus:border-accent focus:outline-none"
               />
             </div>
           </Field>
@@ -169,10 +171,10 @@ export default function ConfigurePage() {
                     key={option.id}
                     type="button"
                     onClick={() => setValue("timeline", option.id, { shouldValidate: true })}
-                    className={`flex flex-col items-center justify-center rounded-xl border p-4 text-center transition-colors ${
+                    className={`flex flex-col items-center justify-center rounded-2xl border p-4 text-center transition-all duration-300 hover:-translate-y-0.5 ${
                       selected
                         ? "border-accent bg-accent-light text-accent"
-                        : "border-border bg-white hover:border-accent"
+                        : "border-border bg-white hover:border-accent hover:shadow-sm"
                     }`}
                   >
                     <span className="text-sm font-semibold">{option.label}</span>

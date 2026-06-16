@@ -64,9 +64,9 @@ export default function CartPage() {
             {enrichedItems.map(({ product, quantity }) => (
               <article
                 key={product.id}
-                className="flex flex-col gap-6 rounded-2xl border border-border bg-white p-4 shadow-sm sm:flex-row sm:p-6"
+                className="flex flex-col gap-6 rounded-2xl border border-border bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md sm:flex-row sm:p-6"
               >
-                <div className="relative h-40 w-full shrink-0 overflow-hidden rounded-xl bg-charcoal sm:w-40">
+                <div className="relative h-40 w-full shrink-0 overflow-hidden rounded-2xl bg-accent-light sm:w-40">
                   <Image
                     src={product.image}
                     alt={product.name}
@@ -86,7 +86,7 @@ export default function CartPage() {
                     <button
                       type="button"
                       onClick={() => removeItem(product.id)}
-                      className="rounded-lg p-1 text-muted transition-colors hover:bg-accent-light hover:text-danger"
+                      className="rounded-full p-2 text-muted transition-colors hover:bg-accent-light hover:text-danger"
                       aria-label={`Remove ${product.name}`}
                     >
                       <Trash2 className="h-5 w-5" />
@@ -97,7 +97,7 @@ export default function CartPage() {
                     {product.specs.slice(0, 2).map((spec) => (
                       <span
                         key={spec.label}
-                        className="rounded-lg bg-accent-light/50 px-3 py-1 text-xs font-medium"
+                        className="rounded-full bg-accent-light/50 px-3 py-1 text-xs font-medium"
                       >
                         {spec.label}: {spec.value}
                       </span>
@@ -123,22 +123,19 @@ export default function CartPage() {
               <div className="flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-border bg-white py-16">
                 <Plus className="h-10 w-10 text-muted" />
                 <p className="mt-4 text-muted">Add Components to Solution</p>
-                <Link
-                  href="/shop"
-                  className="mt-4 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-white hover:bg-accent-dark"
-                >
+                <Button href="/shop" className="mt-4">
                   Browse Products
-                </Link>
+                </Button>
               </div>
             )}
           </div>
         </section>
 
         {/* Scope summary */}
-        <aside className="h-fit rounded-2xl border border-border bg-white shadow-sm">
-          <div className="rounded-t-2xl bg-foreground p-6 text-background">
+        <aside className="h-fit rounded-2xl border border-border bg-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+          <div className="rounded-t-2xl bg-accent p-6 text-white">
             <h2 className="text-lg font-semibold">Estimated Project Scope</h2>
-            <p className="text-xs uppercase tracking-widest text-background/70">
+            <p className="text-xs uppercase tracking-widest text-white/70">
               Technical Aggregation
             </p>
           </div>
@@ -166,11 +163,12 @@ export default function CartPage() {
               </div>
             </dl>
 
-            <div className="mt-6 flex items-start gap-3 rounded-xl border border-border bg-accent-light/30 p-4 text-sm">
+            <div className="mt-6 flex items-start gap-3 rounded-2xl border border-border bg-accent-light/30 p-4 text-sm">
               <Info className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
               <p className="text-muted">
                 Pricing is finalized after technical configuration. This summary
-                represents the current hardware volume for system sizing.
+                represents the current hardware volume for system sizing across
+                your MENA project site.
               </p>
             </div>
 

@@ -49,8 +49,8 @@ export default function CatalogPage() {
       <div className="grid gap-12 lg:grid-cols-[280px_1fr]">
         {/* Filters */}
         <aside className="space-y-8">
-          <div className="rounded-xl border border-border bg-white p-6 shadow-sm">
-            <h2 className="mono-label mb-4">Industry Focus</h2>
+          <div className="rounded-2xl border border-border bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+            <h2 className="mono-label mb-4 text-accent">Industry Focus</h2>
             <div className="space-y-3">
               {INDUSTRY_OPTIONS.map((industry) => (
                 <label
@@ -69,8 +69,8 @@ export default function CatalogPage() {
             </div>
           </div>
 
-          <div className="rounded-xl border border-border bg-white p-6 shadow-sm">
-            <h2 className="mono-label mb-4">Power Requirement</h2>
+          <div className="rounded-2xl border border-border bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+            <h2 className="mono-label mb-4 text-accent">Power Requirement</h2>
             <div className="space-y-2">
               <input
                 type="range"
@@ -88,8 +88,8 @@ export default function CatalogPage() {
             </div>
           </div>
 
-          <div className="rounded-xl border border-border bg-white p-6 shadow-sm">
-            <h2 className="mono-label mb-4">Certification</h2>
+          <div className="rounded-2xl border border-border bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+            <h2 className="mono-label mb-4 text-accent">Certification</h2>
             <div className="space-y-3">
               {certifications.map((cert) => (
                 <label
@@ -111,10 +111,15 @@ export default function CatalogPage() {
 
         {/* Catalog */}
         <section>
-          <h1 className="text-4xl font-semibold sm:text-5xl">Engineering Catalog</h1>
+          <span className="mono-label text-accent">SOLAR PRODUCT CATALOG</span>
+          <h1 className="mt-4 text-4xl font-semibold sm:text-5xl">
+            Engineering Catalog
+          </h1>
           <p className="mt-4 max-w-2xl text-muted">
-            High-performance energy infrastructure components engineered for
-            reliability, modularity, and massive-scale integration.
+            Browse solar panels, inverters, lithium batteries, energy storage
+            systems, cables, and street lighting from trusted brands. Built for
+            residential, commercial, and utility-scale projects across Egypt and
+            the MENA region.
           </p>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
@@ -124,10 +129,10 @@ export default function CatalogPage() {
           </div>
 
           {filteredProducts.length === 0 && (
-            <div className="mt-16 rounded-xl border border-border bg-white p-12 text-center shadow-sm">
+            <div className="mt-16 rounded-2xl border border-border bg-white p-12 text-center shadow-sm">
               <p className="text-muted">
-                No products match the selected filters. Adjust your criteria to see
-                available components.
+                No products match the selected filters. Adjust your criteria to
+                see available components.
               </p>
             </div>
           )}

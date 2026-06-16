@@ -12,14 +12,14 @@ describe("CatalogPage", () => {
   it("filters products by industry", () => {
     render(<CatalogPage />);
 
-    // By default Industrial Manufacturing is checked, so all matching products render
-    expect(screen.getByText("Industrial Inverters")).toBeInTheDocument();
+    // By default Industrial Manufacturing is checked, so matching products render
+    expect(screen.getByText("JA Solar 605W")).toBeInTheDocument();
 
     // Uncheck Industrial Manufacturing
     const checkbox = screen.getByLabelText("Industrial Manufacturing");
     fireEvent.click(checkbox);
 
     // Catalog should still render the products because no filters selected shows all
-    expect(screen.getByText("Industrial Inverters")).toBeInTheDocument();
+    expect(screen.getByText("JA Solar 605W")).toBeInTheDocument();
   });
 });

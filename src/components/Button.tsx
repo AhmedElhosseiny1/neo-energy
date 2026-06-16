@@ -14,11 +14,14 @@ type ButtonProps = {
 };
 
 const variantClasses = {
-  primary: "bg-accent text-white hover:bg-accent-dark border-transparent",
-  secondary: "bg-foreground text-background hover:bg-muted border-transparent",
+  primary:
+    "bg-accent text-white hover:bg-accent-dark border-transparent",
+  secondary:
+    "bg-accent-light text-accent border-border hover:border-accent",
   outline:
-    "bg-transparent text-foreground border-border hover:border-accent hover:text-accent",
-  ghost: "bg-transparent text-foreground hover:bg-accent-light border-transparent",
+    "bg-transparent text-accent border-border hover:border-accent",
+  ghost:
+    "bg-transparent text-foreground hover:bg-accent-light border-transparent",
 };
 
 export function Button({
@@ -32,11 +35,11 @@ export function Button({
   className = "",
   icon,
 }: ButtonProps) {
-  const classes = `inline-flex items-center justify-center gap-2 rounded-lg border px-5 py-2.5 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${variantClasses[variant]} ${className}`;
+  const classes = `inline-flex items-center justify-center gap-2 rounded-full border px-6 py-3 text-base font-semibold transition-all duration-200 hover:-translate-y-px disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 ${variantClasses[variant]} ${className}`;
 
   if (href && !disabled) {
     return (
-      <Link href={href} className={classes}>
+      <Link href={href} className={classes} onClick={onClick}>
         {icon}
         {children}
       </Link>

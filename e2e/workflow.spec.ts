@@ -8,35 +8,35 @@ test.describe("Neo Energy workflow", () => {
 
     await page
       .getByRole("article")
-      .filter({ hasText: "Industrial Inverters" })
+      .filter({ hasText: "JA Solar 605W" })
       .getByRole("button", { name: /add/i })
       .click();
 
     await page
       .getByRole("article")
-      .filter({ hasText: "LFP Battery Systems" })
+      .filter({ hasText: "LPBF (24200-M)" })
       .getByRole("button", { name: /add/i })
       .click();
 
     // Cart
     await page.goto("/cart");
     await expect(page.getByText("Solution Basket")).toBeVisible();
-    await expect(page.getByText("NE-INV-X400")).toBeVisible();
-    await expect(page.getByText("NE-LFP-M50")).toBeVisible();
+    await expect(page.getByText("JA-605W")).toBeVisible();
+    await expect(page.getByText("LPBF-24200-M")).toBeVisible();
 
     // Update quantity
-    const inverterRow = page.getByRole("article").filter({ hasText: "NE-INV-X400" });
-    await inverterRow.getByRole("button", { name: /increase quantity/i }).click();
-    await expect(inverterRow.getByText("2")).toBeVisible();
+    const panelRow = page.getByRole("article").filter({ hasText: "JA-605W" });
+    await panelRow.getByRole("button", { name: /increase quantity/i }).click();
+    await expect(panelRow.getByText("2")).toBeVisible();
 
     // Configuration
     await page.getByRole("link", { name: /proceed to configuration/i }).click();
-    await expect(page.getByText("Define Your Industrial")).toBeVisible({ timeout: 10000 });
+    await expect(page.getByText("Define Your Solar")).toBeVisible({ timeout: 10000 });
 
     await page.getByLabel("Industry Type").selectOption("Industrial Manufacturing");
     await page.getByLabel("Project Size (MW/kW)").fill("2.5 MW");
     await page.getByLabel("Power Requirements").fill("Max Peak Load");
-    await page.getByLabel("Installation Location").fill("Berlin, Germany");
+    await page.getByLabel("Installation Location").fill("Cairo, Egypt");
     await page.getByRole("button", { name: "FY 2025" }).click();
 
     await page
@@ -44,13 +44,13 @@ test.describe("Neo Energy workflow", () => {
       .click();
 
     // Quote
-    await expect(page.getByText("Request Your Engineering Quotation")).toBeVisible();
+    await expect(page.getByText("Request Your Solar Quotation")).toBeVisible();
 
-    await page.getByLabel("Full Name").fill("Alexander Vance");
-    await page.getByLabel("Company").fill("Global Infra Logistics S.A.");
-    await page.getByLabel("Professional Email").fill("alex.vance@example.com");
-    await page.getByLabel("Project Summary").fill(
-      "We need a 2.5 MW industrial BESS solution for peak shaving and grid stabilization."
+    await page.locator("#fullName").fill("Alexander Vance");
+    await page.locator("#companyName").fill("Global Infra Logistics S.A.");
+    await page.locator("#email").fill("alex.vance@example.com");
+    await page.locator("#projectSummary").fill(
+      "We need a 2.5 MW solar solution with panels, inverters, and battery storage for our facility in Egypt."
     );
 
     await page.getByRole("button", { name: /submit quotation request/i }).click();

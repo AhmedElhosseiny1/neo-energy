@@ -14,6 +14,9 @@ import {
   Shield,
   Zap,
   Award,
+  MapPin,
+  Phone,
+  Mail,
 } from "lucide-react";
 import { useCartStore } from "@/store/useCartStore";
 import { allProducts } from "@/data/products";
@@ -22,15 +25,14 @@ import { Button } from "@/components/Button";
 import { quoteRequestSchema, QuoteRequestValues } from "@/lib/validation";
 
 const countries = [
-  "Germany",
-  "United States",
-  "United Kingdom",
-  "France",
-  "Spain",
-  "Italy",
-  "Netherlands",
-  "Singapore",
-  "Australia",
+  "Egypt",
+  "Syria",
+  "Lebanon",
+  "Jordan",
+  "Iraq",
+  "Sudan",
+  "Saudi Arabia",
+  "United Arab Emirates",
   "Other",
 ];
 
@@ -44,7 +46,7 @@ function FileUploadBox({
   icon: React.ReactNode;
 }) {
   return (
-    <label className="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed border-border bg-white p-6 text-center transition-colors hover:border-accent hover:bg-accent-light/20">
+    <label className="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-border bg-white p-6 text-center transition-colors hover:border-accent hover:bg-accent-light/20">
       <input type="file" className="sr-only" />
       <span className="text-accent">{icon}</span>
       <span className="text-xs font-semibold uppercase tracking-wider text-foreground">
@@ -116,12 +118,12 @@ export default function QuotePage() {
         {/* Form */}
         <div>
           <h1 className="text-4xl font-semibold sm:text-5xl">
-            Request Your Engineering Quotation
+            Request Your Solar Quotation
           </h1>
           <p className="mt-4 text-muted">
-            Submit your technical requirements and configuration for expert analysis.
-            Our engineering team will provide a comprehensive system proposal within
-            48 business hours.
+            Submit your project details and selected products for a tailored
+            proposal. Our team will review your requirements and respond with
+            product recommendations and next steps.
           </p>
 
           <form
@@ -148,7 +150,7 @@ export default function QuotePage() {
                   <input
                     id="fullName"
                     type="text"
-                    placeholder="Engineering Lead Name"
+                    placeholder="Your name"
                     {...register("fullName")}
                     className="w-full rounded-lg border border-border px-4 py-3 text-sm focus:border-accent focus:outline-none"
                   />
@@ -162,7 +164,7 @@ export default function QuotePage() {
                   <input
                     id="companyName"
                     type="text"
-                    placeholder="Organization Name"
+                    placeholder="Organization name"
                     {...register("companyName")}
                     className="w-full rounded-lg border border-border px-4 py-3 text-sm focus:border-accent focus:outline-none"
                   />
@@ -171,7 +173,7 @@ export default function QuotePage() {
 
               <div className="mt-6 grid gap-6 sm:grid-cols-2">
                 <Field
-                  label="Professional Email"
+                  label="Email"
                   htmlFor="email"
                   error={errors.email?.message}
                   required
@@ -184,11 +186,11 @@ export default function QuotePage() {
                     className="w-full rounded-lg border border-border px-4 py-3 text-sm focus:border-accent focus:outline-none"
                   />
                 </Field>
-                <Field label="Direct Phone" htmlFor="phone" error={errors.phone?.message}>
+                <Field label="Phone" htmlFor="phone" error={errors.phone?.message}>
                   <input
                     id="phone"
                     type="tel"
-                    placeholder="+1 (000) 000-0000"
+                    placeholder="+20 100 000 0000"
                     {...register("phone")}
                     className="w-full rounded-lg border border-border px-4 py-3 text-sm focus:border-accent focus:outline-none"
                   />
@@ -269,7 +271,7 @@ export default function QuotePage() {
                     {...register("includeWhitepaper")}
                     className="h-4 w-4 rounded accent-accent"
                   />
-                  Include grid-forming control whitepaper
+                  Include solar system sizing guide
                 </label>
               </div>
             </section>
@@ -297,7 +299,7 @@ export default function QuotePage() {
                       ? `Industry: ${configuration.industryType}\nProject Size: ${configuration.projectSize}\nPower Requirements: ${configuration.powerRequirements}\nLocation: ${configuration.installationLocation}\nTimeline: ${configuration.timeline}`
                       : ""
                   }
-                  placeholder="Describe specific integration requirements, environmental constraints, or site conditions..."
+                  placeholder="Describe your project, energy needs, site conditions, or any specific product requirements..."
                   {...register("projectSummary")}
                   className="w-full rounded-lg border border-border px-4 py-3 text-sm focus:border-accent focus:outline-none"
                 />
@@ -305,13 +307,13 @@ export default function QuotePage() {
 
               <div className="mt-6 flex flex-wrap items-center gap-4 text-xs font-medium uppercase tracking-wider text-muted">
                 <span className="inline-flex items-center gap-2 rounded-lg border border-border px-3 py-2">
-                  <Award className="h-4 w-4 text-accent" /> ISO 9001:2015
+                  <Award className="h-4 w-4 text-accent" /> Quality Assured
                 </span>
                 <span className="inline-flex items-center gap-2 rounded-lg border border-border px-3 py-2">
-                  <Zap className="h-4 w-4 text-accent" /> IEC 61850 Compliant
+                  <Zap className="h-4 w-4 text-accent" /> Solar Specialists
                 </span>
                 <span className="inline-flex items-center gap-2 rounded-lg border border-border px-3 py-2">
-                  <Shield className="h-4 w-4 text-accent" /> UL Listed Components
+                  <Shield className="h-4 w-4 text-accent" /> Trusted Brands
                 </span>
               </div>
             </section>
@@ -322,8 +324,8 @@ export default function QuotePage() {
         <aside className="h-fit rounded-2xl border border-border bg-white p-6 shadow-sm sm:p-8">
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-semibold">My Solution</h2>
-            <span className="rounded-lg bg-accent px-3 py-1 text-xs font-semibold text-white">
-              {items.reduce((sum, i) => sum + i.quantity, 0)} SYSTEMS
+            <span className="rounded-full bg-accent px-3 py-1 text-xs font-semibold text-white">
+              {items.reduce((sum, i) => sum + i.quantity, 0)} ITEMS
             </span>
           </div>
 
@@ -354,19 +356,19 @@ export default function QuotePage() {
           <div className="mt-6 space-y-3 border-t border-border pt-6 text-sm">
             <div className="flex justify-between">
               <span className="text-muted">Estimated Lead Time</span>
-              <span className="font-semibold">12-14 Weeks</span>
+              <span className="font-semibold">Contact us</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-muted">Standard Warranty</span>
-              <span className="font-semibold">15 Years</span>
+              <span className="text-muted">Warranty</span>
+              <span className="font-semibold">Per manufacturer terms</span>
             </div>
           </div>
 
           <div className="mt-6 rounded-xl bg-accent-light/30 p-4 text-sm">
             <p className="text-muted">
-              Final pricing is subject to technical review, site accessibility
-              assessment, and current raw material indices at the time of official
-              quotation issuance.
+              Final pricing is subject to product availability, project scope,
+              and technical review. Our team will confirm details before
+              issuing an official quotation.
             </p>
           </div>
 
@@ -383,19 +385,41 @@ export default function QuotePage() {
             Secure encrypted submission
           </p>
 
-          <div className="mt-6 rounded-xl border border-border p-4">
+          {/* Contact info */}
+          <div className="mt-6 rounded-2xl border border-border p-4">
+            <h3 className="font-semibold">Contact Us</h3>
+            <div className="mt-4 space-y-3 text-sm text-muted">
+              <p className="flex items-start gap-2">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                Villa No. 8, Ninth District Service Center, Sheikh Zayed, Egypt
+              </p>
+              <p className="flex items-center gap-2">
+                <Phone className="h-4 w-4 shrink-0 text-accent" />
+                +20 120 843 4441 / +20 120 843 4449
+              </p>
+              <p className="flex items-center gap-2">
+                <Mail className="h-4 w-4 shrink-0 text-accent" />
+                info@neo-es.com
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-6 rounded-2xl border border-border p-4">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full bg-accent-light">
                 <MessageCircle className="h-5 w-5 text-accent" />
               </div>
               <div>
                 <p className="font-semibold">Need assistance?</p>
-                <p className="text-xs text-muted">Marcus V., Senior Systems Engineer is online.</p>
+                <p className="text-xs text-muted">
+                  Our team is ready to help with product selection and project
+                  guidance.
+                </p>
                 <Link
-                  href="mailto:engineering@neoenergy.solutions"
+                  href="mailto:info@neo-es.com"
                   className="text-xs font-medium text-accent hover:text-accent-dark"
                 >
-                  Start Technical Chat
+                  Email Us
                 </Link>
               </div>
             </div>

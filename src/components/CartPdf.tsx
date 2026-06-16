@@ -27,18 +27,24 @@ Font.register({
   ],
 });
 
+const forest = "#183C2E";
+const sage = "#EEF6EA";
+const neutral600 = "#66736D";
+const neutral300 = "#DDE5DC";
+
 const styles = StyleSheet.create({
   page: {
     padding: 40,
     fontFamily: "Helvetica",
     fontSize: 10,
-    color: "#1c1c1b",
+    color: "#111513",
+    backgroundColor: "#FFFFFF",
   },
   header: {
     flexDirection: "row",
     justifyContent: "space-between",
     borderBottomWidth: 2,
-    borderBottomColor: "#4a7c23",
+    borderBottomColor: forest,
     paddingBottom: 20,
     marginBottom: 30,
   },
@@ -48,7 +54,7 @@ const styles = StyleSheet.create({
     fontSize: 8,
     letterSpacing: 1,
     textTransform: "uppercase",
-    color: "#6b6b67",
+    color: neutral600,
   },
   refValue: { fontSize: 18, fontWeight: "bold", marginTop: 4 },
   section: { marginBottom: 20 },
@@ -58,27 +64,27 @@ const styles = StyleSheet.create({
     fontSize: 8,
     letterSpacing: 1,
     textTransform: "uppercase",
-    color: "#6b6b67",
+    color: neutral600,
     marginBottom: 4,
   },
   value: { fontSize: 11, marginBottom: 8 },
-  categoryBox: { backgroundColor: "#e8f0df", padding: 10, marginTop: 10 },
+  categoryBox: { backgroundColor: sage, padding: 10, marginTop: 10 },
   tableHeader: {
     flexDirection: "row",
     borderBottomWidth: 1,
-    borderBottomColor: "#d9d7ce",
+    borderBottomColor: neutral300,
     paddingBottom: 6,
     marginBottom: 6,
     fontWeight: "bold",
     fontSize: 9,
     letterSpacing: 0.5,
     textTransform: "uppercase",
-    color: "#6b6b67",
+    color: neutral600,
   },
   tableRow: {
     flexDirection: "row",
     borderBottomWidth: 1,
-    borderBottomColor: "#d9d7ce",
+    borderBottomColor: neutral300,
     paddingVertical: 8,
   },
   cellSku: { width: "20%" },
@@ -87,7 +93,7 @@ const styles = StyleSheet.create({
   cellLead: { width: "15%", textAlign: "right" },
   badge: {
     borderWidth: 1,
-    borderColor: "#d9d7ce",
+    borderColor: neutral300,
     paddingHorizontal: 8,
     paddingVertical: 4,
     marginRight: 6,
@@ -97,13 +103,13 @@ const styles = StyleSheet.create({
   footer: {
     marginTop: 30,
     borderTopWidth: 1,
-    borderTopColor: "#d9d7ce",
+    borderTopColor: neutral300,
     paddingTop: 15,
     flexDirection: "row",
     justifyContent: "space-between",
   },
   note: {
-    backgroundColor: "#f1f0ea",
+    backgroundColor: sage,
     padding: 10,
     marginTop: 20,
   },
@@ -150,23 +156,23 @@ export function CartPdf({
                 <Text
                   x="0"
                   y="62"
-                  style={{ fontSize: 72, fontWeight: "bold", fill: "#4a7c23" }}
+                  style={{ fontSize: 72, fontWeight: "bold", fill: forest }}
                 >
                   neo
                 </Text>
                 <Text
                   x="132"
                   y="75"
-                  style={{ fontSize: 17, fontWeight: "bold", fill: "#4a7c23" }}
+                  style={{ fontSize: 17, fontWeight: "bold", fill: forest }}
                 >
                   ENERGY
                 </Text>
-                <Circle cx="204" cy="14" r="7" stroke="#4a7c23" strokeWidth="1.5" />
+                <Circle cx="204" cy="14" r="7" stroke={forest} strokeWidth="1.5" />
                 <Text
                   x="204"
                   y="17"
                   textAnchor="middle"
-                  style={{ fontSize: 8, fontWeight: "bold", fill: "#4a7c23" }}
+                  style={{ fontSize: 8, fontWeight: "bold", fill: forest }}
                 >
                   R
                 </Text>
@@ -176,8 +182,8 @@ export function CartPdf({
           <View style={styles.reference}>
             <Text style={styles.refLabel}>Document Reference</Text>
             <Text style={styles.refValue}>{referenceId}</Text>
-            <Text style={{ marginTop: 4, color: "#6b6b67" }}>Issued: {today}</Text>
-            <Text style={{ color: "#6b6b67" }}>Validity: 30 Days from Issuance</Text>
+            <Text style={{ marginTop: 4, color: neutral600 }}>Issued: {today}</Text>
+            <Text style={{ color: neutral600 }}>Validity: 30 Days from Issuance</Text>
           </View>
         </View>
 
@@ -201,13 +207,13 @@ export function CartPdf({
             <View style={styles.column}>
               <Text style={styles.label}>Engineering Contact</Text>
               <Text style={{ fontWeight: "bold" }}>
-                Sarah Jenkins, Senior Solutions Architect
+                Neo Energy Engineering Team
               </Text>
-              <Text style={styles.value}>s.jenkins@neoenergy.com</Text>
+              <Text style={styles.value}>info@neo-es.com</Text>
 
               <View style={styles.categoryBox}>
                 <Text style={styles.label}>Solution Category</Text>
-                <Text>Industrial Scale Energy System</Text>
+                <Text>Industrial Scale Solar & Energy Storage System</Text>
               </View>
             </View>
           </View>
@@ -217,7 +223,7 @@ export function CartPdf({
           <Text style={{ fontSize: 14, fontWeight: "bold" }}>
             {quote ? "Technical Configuration" : "Selected Components"}
           </Text>
-          <Text style={{ color: "#6b6b67", marginBottom: 10 }}>
+          <Text style={{ color: neutral600, marginBottom: 10 }}>
             {quote
               ? "Detailed breakdown of selected hardware and system integration components."
               : "Components currently saved in your cart for quotation."}
@@ -236,7 +242,7 @@ export function CartPdf({
               <View style={styles.cellDesc}>
                 <Text style={{ fontWeight: "bold" }}>{product.name}</Text>
                 {product.specs.slice(0, 3).map((spec) => (
-                  <Text key={spec.label} style={{ color: "#6b6b67" }}>
+                  <Text key={spec.label} style={{ color: neutral600 }}>
                     • {spec.label}: {spec.value}
                   </Text>
                 ))}
@@ -262,7 +268,7 @@ export function CartPdf({
           </View>
           <View style={styles.column}>
             <Text style={styles.label}>Quality Assurance</Text>
-            <Text style={[styles.badge, { borderColor: "#4a7c23", color: "#4a7c23" }]}>
+            <Text style={[styles.badge, { borderColor: forest, color: forest }]}>
               ISO 9001:2015 CERTIFIED
             </Text>
           </View>
@@ -285,10 +291,10 @@ export function CartPdf({
         </View>
 
         <View style={styles.note}>
-          <Text style={{ fontWeight: "bold", color: "#4a7c23" }}>
+          <Text style={{ fontWeight: "bold", color: forest }}>
             Technical Note on Integration
           </Text>
-          <Text style={{ marginTop: 4, color: "#6b6b67" }}>
+          <Text style={{ marginTop: 4, color: neutral600 }}>
             The lead times indicated are estimates based on current supply chain
             availability. Final schedules are subject to technical site survey
             verification and local utility interconnection approvals.
@@ -298,15 +304,15 @@ export function CartPdf({
         <View style={styles.footer}>
           <View>
             <Text style={{ fontWeight: "bold" }}>Neo Energy Solutions</Text>
-            <Text style={{ color: "#6b6b67" }}>Precision Industrial Power Systems</Text>
-            <Text style={{ color: "#6b6b67" }}>Zurich • Berlin • Singapore</Text>
+            <Text style={{ color: neutral600 }}>Renewable Energy Solutions</Text>
+            <Text style={{ color: neutral600 }}>Egypt • Levant • North Africa</Text>
           </View>
           <View style={{ textAlign: "right" }}>
-            <Text style={{ color: "#6b6b67" }}>
+            <Text style={{ color: neutral600 }}>
               © 2024 Neo Energy Solutions. All Rights Reserved.
             </Text>
             {submittedAt && (
-              <Text style={{ color: "#6b6b67" }}>
+              <Text style={{ color: neutral600 }}>
                 Submitted: {new Date(submittedAt).toLocaleString()}
               </Text>
             )}
