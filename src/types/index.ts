@@ -8,6 +8,7 @@ export interface Product {
   slug: string;
   sku: string;
   category: string;
+  brand?: string;
   name: string;
   shortDescription: string;
   fullDescription: string;

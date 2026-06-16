@@ -16,6 +16,7 @@ export const catalogProducts: Product[] = [
     slug: "ja-solar-605w",
     sku: "JA-605W",
     category: "SOLAR PANELS",
+    brand: "JA Solar",
     name: "JA Solar 605W",
     shortDescription:
       "High-performance solar panel from JA Solar for residential, commercial, and utility-scale projects.",
@@ -38,6 +39,7 @@ export const catalogProducts: Product[] = [
     slug: "longi-605w-lr7-72hth",
     sku: "LONGI-605W-LR7-72HTH",
     category: "SOLAR PANELS",
+    brand: "Longi",
     name: "Longi 605W (LR7-72HTH)",
     shortDescription:
       "High-efficiency Longi solar panel designed for reliable energy generation across project types.",
@@ -60,6 +62,7 @@ export const catalogProducts: Product[] = [
     slug: "jet-solar-580w",
     sku: "JET-580W",
     category: "SOLAR PANELS",
+    brand: "Jet Solar",
     name: "Jet Solar 580W",
     shortDescription:
       "Locally manufactured certified panel balancing quality and affordability.",
@@ -84,6 +87,7 @@ export const catalogProducts: Product[] = [
     slug: "lpbf-24200-m",
     sku: "LPBF-24200-M",
     category: "BATTERIES",
+    brand: "Felicity Solar",
     name: "LPBF (24200-M)",
     shortDescription:
       "5 kWh lithium phosphate wall-mounted battery with smart communication and long cycle life.",
@@ -116,6 +120,7 @@ export const catalogProducts: Product[] = [
     slug: "fla-24300",
     sku: "FLA-24300",
     category: "BATTERIES",
+    brand: "Felicity Solar",
     name: "FLA (24300)",
     shortDescription:
       "7.5 kWh lithium phosphate battery with smart BMS, LCD display, and 7-year warranty.",
@@ -150,6 +155,7 @@ export const catalogProducts: Product[] = [
     slug: "fla-48300",
     sku: "FLA-48300",
     category: "BATTERIES",
+    brand: "Felicity Solar",
     name: "FLA (48300)",
     shortDescription:
       "15 kWh floor-mounted lithium phosphate battery with smart BMS and 7-year warranty.",
@@ -184,6 +190,7 @@ export const catalogProducts: Product[] = [
     slug: "fla-12200",
     sku: "FLA-12200",
     category: "BATTERIES",
+    brand: "Felicity Solar",
     name: "FLA (12200)",
     shortDescription:
       "200 Ah / 2.56 kWh lithium phosphate battery with 7-year warranty.",
@@ -212,6 +219,7 @@ export const catalogProducts: Product[] = [
     slug: "frecon-pv500",
     sku: "FRECON-PV500",
     category: "INVERTERS",
+    brand: "FRECON",
     name: "FRECON PV500 Series Solar Pumping Inverter",
     shortDescription:
       "Solar pumping inverter series designed for efficient and reliable water-pumping applications.",
@@ -240,6 +248,7 @@ export const catalogProducts: Product[] = [
     slug: "elsewedy-h1z2z2-k",
     sku: "ELSEWEDY-H1Z2Z2-K",
     category: "CABLES",
+    brand: "Elsewedy",
     name: "Elsewedy H1Z2Z2-K DC Solar Cable",
     shortDescription:
       "Reliable single-core flexible DC solar cable for photovoltaic systems.",
@@ -275,6 +284,7 @@ export const catalogProducts: Product[] = [
     slug: "felicity-ess-5048-5kwh",
     sku: "5048-5kWh",
     category: "ALL-IN-ONE ESS",
+    brand: "Felicity Solar",
     name: "Felicity Solar All-in-One ESS – 5kWh",
     shortDescription:
       "Compact plug-and-play ESS with built-in MPPT and safe storage.",
@@ -302,6 +312,7 @@ export const catalogProducts: Product[] = [
     slug: "felicity-ess-5048-10kwh",
     sku: "5048-10kWh",
     category: "ALL-IN-ONE ESS",
+    brand: "Felicity Solar",
     name: "Felicity Solar All-in-One ESS – 10kWh",
     shortDescription:
       "Higher storage capacity with modular design and smart protection.",
@@ -329,6 +340,7 @@ export const catalogProducts: Product[] = [
     slug: "felicity-ess-5048-15kwh",
     sku: "5048-15kWh",
     category: "ALL-IN-ONE ESS",
+    brand: "Felicity Solar",
     name: "Felicity Solar All-in-One ESS – 15kWh",
     shortDescription:
       "Medium-scale ESS for villas, offices, and medium-scale energy needs.",
@@ -356,6 +368,7 @@ export const catalogProducts: Product[] = [
     slug: "felicity-ess-5048-20kwh",
     sku: "5048-20kWh",
     category: "ALL-IN-ONE ESS",
+    brand: "Felicity Solar",
     name: "Felicity Solar All-in-One ESS – 20kWh",
     shortDescription:
       "Larger-capacity option for farms, schools, and commercial facilities.",
@@ -385,6 +398,7 @@ export const catalogProducts: Product[] = [
     slug: "solar-street-light-a3-series",
     sku: "A3-SERIES",
     category: "SOLAR STREET LIGHTS",
+    brand: "Neo Energy",
     name: "A3 Series Solar Street Light",
     shortDescription:
       "Integrated outdoor solar lighting solution combining solar panel, LiFePO4 battery, and LED.",
@@ -411,6 +425,7 @@ export const catalogProducts: Product[] = [
     slug: "solar-street-light-f1-series",
     sku: "F1-SERIES",
     category: "SOLAR STREET LIGHTS",
+    brand: "Neo Energy",
     name: "F1 Series Solar Street Light",
     shortDescription:
       "Integrated outdoor solar lighting solution for public and commercial spaces.",
@@ -437,6 +452,7 @@ export const catalogProducts: Product[] = [
     slug: "solar-street-light-f1a-series",
     sku: "F1A-SERIES",
     category: "SOLAR STREET LIGHTS",
+    brand: "Neo Energy",
     name: "F1A Series Solar Street Light – Upgraded Line",
     shortDescription:
       "Upgraded solar street light line with integrated solar, battery, and LED technology.",
@@ -463,6 +479,7 @@ export const catalogProducts: Product[] = [
     slug: "solar-street-light-p3-series",
     sku: "P3-SERIES",
     category: "SOLAR STREET LIGHTS",
+    brand: "Neo Energy",
     name: "P3 Series Solar Street Light",
     shortDescription:
       "Integrated outdoor solar lighting solution for public, commercial, and outdoor projects.",
@@ -492,6 +509,7 @@ export const compatibleComponents: Product[] = [
     slug: "fla-24100-m",
     sku: "FLA-24100-M",
     category: "BATTERIES",
+    brand: "Felicity Solar",
     name: "FLA (24100-M)",
     shortDescription:
       "Felicity Solar lithium phosphate battery compatible with leading inverters and energy systems.",
@@ -518,6 +536,7 @@ export const compatibleComponents: Product[] = [
     slug: "fla-24200-m",
     sku: "FLA-24200-M",
     category: "BATTERIES",
+    brand: "Felicity Solar",
     name: "FLA (24200-M)",
     shortDescription:
       "Felicity Solar lithium phosphate battery with long cycle life and smart BMS.",
@@ -544,6 +563,7 @@ export const compatibleComponents: Product[] = [
     slug: "fla-48100-m",
     sku: "FLA-48100-M",
     category: "BATTERIES",
+    brand: "Felicity Solar",
     name: "FLA (48100-M)",
     shortDescription:
       "Felicity Solar 48V lithium phosphate battery module for scalable storage systems.",
@@ -570,6 +590,7 @@ export const compatibleComponents: Product[] = [
     slug: "fla-48200-m",
     sku: "FLA-48200-M",
     category: "BATTERIES",
+    brand: "Felicity Solar",
     name: "FLA (48200-M)",
     shortDescription:
       "Felicity Solar 48V lithium phosphate battery for backup and optimized energy usage.",
@@ -596,6 +617,7 @@ export const compatibleComponents: Product[] = [
     slug: "seval-dc-cables",
     sku: "SEVAL-DC",
     category: "CABLES",
+    brand: "Seval",
     name: "Seval DC Cables",
     shortDescription:
       "Turkish-made solar cables designed for optimal energy transfer.",
@@ -622,6 +644,7 @@ export const compatibleComponents: Product[] = [
     slug: "kbe-berlin-dc-cables",
     sku: "KBE-BERLIN-DC",
     category: "CABLES",
+    brand: "KBE Berlin",
     name: "KBE Berlin DC Cables",
     shortDescription:
       "German-engineered premium DC cable option for high performance.",
