@@ -10,8 +10,8 @@ export function NeoLogo({ className = "" }: NeoLogoProps) {
     <Image
       src="/images/neo-logo.png"
       alt="Neo Energy logo"
-      width={160}
-      height={88}
+      width={2296}
+      height={1032}
       className={className}
       priority
     />
