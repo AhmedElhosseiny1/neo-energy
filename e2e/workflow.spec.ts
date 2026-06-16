@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("Neo Energy workflow", () => {
-  test("catalog → cart → configuration → quote → success", async ({ page }) => {
+  test("catalog → cart → quote → success", async ({ page }) => {
     // Catalog
     await page.goto("/catalog");
     await expect(page.getByText("Engineering Catalog")).toBeVisible();
@@ -29,21 +29,8 @@ test.describe("Neo Energy workflow", () => {
     await panelRow.getByRole("button", { name: /increase quantity/i }).click();
     await expect(panelRow.getByText("2")).toBeVisible();
 
-    // Configuration
-    await page.getByRole("link", { name: /proceed to configuration/i }).click();
-    await expect(page.getByText("Define Your Solar")).toBeVisible({ timeout: 10000 });
-
-    await page.getByLabel("Industry Type").selectOption("Industrial Manufacturing");
-    await page.getByLabel("Project Size (MW/kW)").fill("2.5 MW");
-    await page.getByLabel("Power Requirements").fill("Max Peak Load");
-    await page.getByLabel("Installation Location").fill("Cairo, Egypt");
-    await page.getByRole("button", { name: "FY 2025" }).click();
-
-    await page
-      .getByRole("button", { name: /continue to quotation request/i })
-      .click();
-
     // Quote
+    await page.getByRole("link", { name: /proceed to quotation request/i }).click();
     await expect(page.getByText("Request Your Solar Quotation")).toBeVisible();
 
     await page.locator("#fullName").fill("Alexander Vance");
@@ -56,7 +43,9 @@ test.describe("Neo Energy workflow", () => {
     await page.getByRole("button", { name: /submit quotation request/i }).click();
 
     // Success
-    await expect(page.getByText("Request Successfully Submitted")).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: /download your quotation request/i })
+    ).toBeVisible();
   });
 
   test("cart state persists after refresh", async ({ page }) => {

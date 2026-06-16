@@ -45,11 +45,7 @@ export interface QuoteRequest {
   email: string;
   phone?: string;
   projectCountry?: string;
-  projectSummary: string;
-  includeDatasheets: boolean;
-  includeDrawings: boolean;
-  includeWhitepaper: boolean;
-  preferredContact: "email" | "phone";
+  projectSummary?: string;
 }
 
 export interface ProjectScope {

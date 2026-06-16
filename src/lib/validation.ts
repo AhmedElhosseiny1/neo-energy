@@ -16,13 +16,7 @@ export const quoteRequestSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
   phone: z.string().optional(),
   projectCountry: z.string().optional(),
-  projectSummary: z
-    .string()
-    .min(20, "Please provide a brief project summary (at least 20 characters)"),
-  includeDatasheets: z.boolean(),
-  includeDrawings: z.boolean(),
-  includeWhitepaper: z.boolean(),
-  preferredContact: z.enum(["email", "phone"]),
+  projectSummary: z.string().optional(),
 });
 
 export type ConfigurationDraftValues = z.infer<typeof configurationDraftSchema>;

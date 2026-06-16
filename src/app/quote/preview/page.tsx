@@ -87,8 +87,12 @@ export default function QuotePreviewPage() {
             <p className="text-muted">{quote.companyName}</p>
             <p className="text-muted">{quote.email}</p>
 
-            <p className="mono-label mt-4">Installation Location</p>
-            <p className="text-muted">{configuration.installationLocation}</p>
+            {configuration?.installationLocation && (
+              <>
+                <p className="mono-label mt-4">Installation Location</p>
+                <p className="text-muted">{configuration.installationLocation}</p>
+              </>
+            )}
           </div>
           <div>
             <p className="mono-label">Engineering Contact</p>
@@ -102,9 +106,9 @@ export default function QuotePreviewPage() {
         </div>
 
         <div className="mt-10">
-          <h2 className="text-xl font-semibold">Technical Configuration</h2>
+          <h2 className="text-xl font-semibold">Selected Components</h2>
           <p className="text-sm text-muted">
-            Detailed breakdown of selected hardware and system integration components.
+            Detailed breakdown of the products selected for your quotation request.
           </p>
 
           <table className="mt-4 w-full text-left text-sm">

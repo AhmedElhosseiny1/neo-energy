@@ -2,15 +2,24 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle, Clock, User, FileText, Phone, Mail, ArrowRight } from "lucide-react";
+import { CheckCircle, Clock, User, FileText, Phone, Mail } from "lucide-react";
 import { useCartStore } from "@/store/useCartStore";
+import { allProducts } from "@/data/products";
 import { Button } from "@/components/Button";
+
+const QuotePdfDownload = dynamic(
+  () =>
+    import("@/components/QuotePdfDownload").then((mod) => mod.QuotePdfDownload),
+  { ssr: false }
+);
 
 export default function QuoteSuccessPage() {
   const router = useRouter();
-  const { quote, items, markSubmitted } = useCartStore();
+  const { quote, items, submittedAt, referenceId, configuration, markSubmitted } =
+    useCartStore();
 
   useEffect(() => {
     if (items.length === 0 || !quote) {
@@ -29,17 +38,24 @@ export default function QuoteSuccessPage() {
           <CheckCircle className="h-8 w-8" />
         </span>
         <h1 className="mt-6 text-4xl font-semibold sm:text-5xl">
-          Request Successfully Submitted
+          Download Your Quotation Request
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-muted">
-          Your solar energy project request has been received. Our engineering
-          team is already reviewing your technical requirements to prepare a
-          tailored proposal for your site across Egypt and the MENA region.
+          Your request has been submitted. Download your quotation request as a
+          PDF to share with your team or keep for your records. Our engineering
+          team will follow up with a tailored proposal.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <Button href="/quote/preview" icon={<FileText className="h-4 w-4" />}>
-            Preview Technical Document
-          </Button>
+          <QuotePdfDownload
+            items={items}
+            products={allProducts}
+            configuration={configuration}
+            quote={quote}
+            referenceId={referenceId}
+            submittedAt={submittedAt}
+            label="Download Quotation Request PDF"
+            className="inline-flex items-center gap-2 rounded-full bg-red-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:-translate-y-px hover:bg-red-700"
+          />
           <Button href="/catalog" variant="outline">
             Browse More Products
           </Button>
@@ -92,9 +108,16 @@ export default function QuoteSuccessPage() {
             engineering standards and comprehensive product range.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Button href="/quote/preview" icon={<FileText className="h-4 w-4" />}>
-              Preview Technical Document
-            </Button>
+            <QuotePdfDownload
+              items={items}
+              products={allProducts}
+              configuration={configuration}
+              quote={quote}
+              referenceId={referenceId}
+              submittedAt={submittedAt}
+              label="Download Quotation Request PDF"
+              className="inline-flex items-center gap-2 rounded-full bg-red-600 px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:-translate-y-px hover:bg-red-700"
+            />
             <Button href="/catalog" variant="outline">
               Browse More Products
             </Button>
@@ -148,7 +171,7 @@ export default function QuoteSuccessPage() {
           href="/quote/preview"
           className="inline-flex items-center gap-2 text-accent hover:text-accent-dark"
         >
-          Preview Technical Document <ArrowRight className="h-4 w-4" />
+          Preview quotation document
         </Link>
       </div>
     </div>

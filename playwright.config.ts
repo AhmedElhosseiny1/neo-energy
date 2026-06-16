@@ -23,8 +23,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command:
-      'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && PORT=3000 npm run dev',
+    command: "python3 scripts/e2e_server.py",
     url: "http://localhost:3000",
     reuseExistingServer: false,
     timeout: 120000,

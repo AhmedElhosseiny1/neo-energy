@@ -20,8 +20,7 @@ const CartPdfDownload = dynamic(
 
 const steps = [
   { number: 1, label: "Selection" },
-  { number: 2, label: "Configuration" },
-  { number: 3, label: "Request" },
+  { number: 2, label: "Request" },
 ];
 
 interface EnrichedItem {
@@ -174,11 +173,11 @@ export default function CartPage() {
 
             <div className="mt-6 space-y-3">
               <Button
-                href={hasItems ? "/solution/configure" : "#"}
+                href={hasItems ? "/quote" : "#"}
                 disabled={!hasItems}
                 className="w-full"
               >
-                Proceed to Configuration
+                Proceed to Quotation Request
               </Button>
               <Button variant="outline" className="w-full">
                 Save for Technical Review

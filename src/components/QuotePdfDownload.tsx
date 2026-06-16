@@ -10,9 +10,11 @@ interface QuotePdfDownloadProps {
   items: CartItem[];
   products: Product[];
   referenceId: string;
-  configuration: ConfigurationDraft;
+  configuration?: ConfigurationDraft;
   quote: QuoteRequest;
   submittedAt?: string | null;
+  label?: string;
+  className?: string;
 }
 
 export function QuotePdfDownload({
@@ -22,6 +24,8 @@ export function QuotePdfDownload({
   configuration,
   quote,
   submittedAt,
+  label = "Download PDF",
+  className = "inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:-translate-y-px hover:bg-accent-dark",
 }: QuotePdfDownloadProps) {
   const { track } = useAnalytics();
 
@@ -36,21 +40,21 @@ export function QuotePdfDownload({
       }
     >
       <PDFDownloadLink
-      document={
-        <CartPdf
-          items={items}
-          products={products}
-          referenceId={referenceId}
-          configuration={configuration}
-          quote={quote}
-          submittedAt={submittedAt}
-        />
-      }
-      fileName={`neo-energy-quote-${referenceId}.pdf`}
-      className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:-translate-y-px hover:bg-accent-dark"
-    >
-      <Download className="h-4 w-4" /> Download PDF
-    </PDFDownloadLink>
+        document={
+          <CartPdf
+            items={items}
+            products={products}
+            referenceId={referenceId}
+            configuration={configuration}
+            quote={quote}
+            submittedAt={submittedAt}
+          />
+        }
+        fileName={`neo-energy-quote-${referenceId}.pdf`}
+        className={className}
+      >
+        <Download className="h-4 w-4" /> {label}
+      </PDFDownloadLink>
     </span>
   );
 }
