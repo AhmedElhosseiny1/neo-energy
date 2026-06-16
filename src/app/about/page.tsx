@@ -45,12 +45,10 @@ export default function AboutPage() {
   ];
 
   const partners = [
-    "Felicity Solar",
-    "JA Solar",
-    "Logi",
-    "Frecon",
-    "Jet Solar",
-    "El Sewedy Electric",
+    { name: "Elsewedy Electric", logo: "/images/partners/elsewedy-electric.png" },
+    { name: "Frecon", logo: "/images/partners/frecon.png" },
+    { name: "Jet Solar", logo: "/images/partners/jet-solar.png" },
+    { name: "GoodWe", logo: "/images/partners/goodwe.png" },
   ];
 
   const stats = [
@@ -251,13 +249,20 @@ export default function AboutPage() {
               products to our customers.
             </p>
           </div>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-6 sm:gap-10">
             {partners.map((partner) => (
               <div
-                key={partner}
-                className="rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-all hover:-translate-y-1 hover:border-accent hover:shadow-md"
+                key={partner.name}
+                className="flex h-20 w-40 items-center justify-center rounded-2xl border border-border bg-white px-5 py-4 shadow-sm transition-all hover:-translate-y-1 hover:border-accent hover:shadow-md"
+                title={partner.name}
               >
-                {partner}
+                <Image
+                  src={partner.logo}
+                  alt={partner.name}
+                  width={160}
+                  height={64}
+                  className="max-h-10 w-auto object-contain"
+                />
               </div>
             ))}
           </div>

@@ -106,14 +106,33 @@ export default function HomePage() {
       </section>
 
       {/* Partner logos */}
-      <section className="border-b border-border bg-white py-6">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 text-xs font-semibold tracking-widest text-muted sm:px-6 lg:px-8">
-          <span>FELICITY SOLAR</span>
-          <span>JA SOLAR</span>
-          <span>JET SOLAR</span>
-          <span>FRECON</span>
-          <span>EL SEWEDY ELECTRIC</span>
-          <span>LOGI</span>
+      <section className="border-b border-border bg-white py-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p className="mb-6 text-center text-xs font-semibold uppercase tracking-widest text-muted">
+            Trusted Brand Partners
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
+            {[
+              { name: "Elsewedy Electric", logo: "/images/partners/elsewedy-electric.png" },
+              { name: "Frecon", logo: "/images/partners/frecon.png" },
+              { name: "Jet Solar", logo: "/images/partners/jet-solar.png" },
+              { name: "GoodWe", logo: "/images/partners/goodwe.png" },
+            ].map((partner) => (
+              <div
+                key={partner.name}
+                className="flex h-12 items-center justify-center grayscale transition-all hover:grayscale-0"
+                title={partner.name}
+              >
+                <Image
+                  src={partner.logo}
+                  alt={partner.name}
+                  width={140}
+                  height={48}
+                  className="max-h-10 w-auto object-contain"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
