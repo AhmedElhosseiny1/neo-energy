@@ -6,6 +6,7 @@ import { getProductBySlug, compatibleComponents, allProducts } from "@/data/prod
 import { TechnicalTable } from "@/components/TechnicalTable";
 import { Button } from "@/components/Button";
 import { AddToCartButton } from "@/components/AddToCartButton";
+import { ProductViewTracker } from "@/components/ProductViewTracker";
 
 interface ProductPageProps {
   params: Promise<{ slug: string }>;
@@ -28,7 +29,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const related = compatibleComponents.slice(0, 4);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <>
+      <ProductViewTracker product={product} />
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       {/* Breadcrumb / header */}
       <div className="grid gap-10 lg:grid-cols-2">
         <div className="relative aspect-square overflow-hidden rounded-2xl bg-accent-light sm:aspect-[4/3]">
@@ -282,5 +285,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </div>
       </section>
     </div>
+    </>
   );
 }

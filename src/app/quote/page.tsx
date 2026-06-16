@@ -23,6 +23,7 @@ import { allProducts } from "@/data/products";
 import { Field } from "@/components/Field";
 import { Button } from "@/components/Button";
 import { quoteRequestSchema, QuoteRequestValues } from "@/lib/validation";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 const countries = [
   "Egypt",
@@ -62,6 +63,7 @@ function FileUploadBox({
 export default function QuotePage() {
   const router = useRouter();
   const { items, configuration, quote, setQuote } = useCartStore();
+  const { track } = useAnalytics();
 
   useEffect(() => {
     if (items.length === 0) {
@@ -91,6 +93,12 @@ export default function QuotePage() {
 
   const onSubmit = (data: QuoteRequestValues) => {
     setQuote(data);
+    track("quote_submitted", {
+      email: data.email,
+      company: data.companyName,
+      country: data.projectCountry,
+      product_count: items.reduce((sum, i) => sum + i.quantity, 0),
+    });
     router.push("/quote/success");
   };
 

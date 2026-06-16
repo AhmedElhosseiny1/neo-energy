@@ -13,6 +13,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/Button";
+import { RegionalMap } from "@/components/RegionalMap";
 
 export const metadata: Metadata = {
   title: "About | Neo Energy Solutions",
@@ -49,13 +50,6 @@ export default function AboutPage() {
     { name: "Frecon", logo: "/images/partners/frecon.png" },
     { name: "Jet Solar", logo: "/images/partners/jet-solar.png" },
     { name: "GoodWe", logo: "/images/partners/goodwe.png" },
-  ];
-
-  const stats = [
-    { value: "140", label: "Containers to Lebanon", sub: "100,800 panels" },
-    { value: "153", label: "Containers to Syria", sub: "110,160 panels" },
-    { value: "80", label: "Containers to Iraq", sub: "57,600 panels" },
-    { value: "+50", label: "Containers in Egypt 2025", sub: "+35K panels" },
   ];
 
   return (
@@ -95,25 +89,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Stats strip */}
-      <section className="border-b border-border bg-card">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-2xl border border-border bg-white p-6 text-center shadow-sm"
-              >
-                <p className="text-4xl font-semibold text-accent">{stat.value}</p>
-                <p className="mt-2 text-sm font-medium text-foreground">
-                  {stat.label}
-                </p>
-                <p className="mt-1 text-xs text-muted">{stat.sub}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <RegionalMap />
 
       {/* Who We Are / History */}
       <section className="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8">

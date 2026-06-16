@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ShoppingCart, SlidersHorizontal } from "lucide-react";
 import { Product } from "@/types";
 import { useCartStore } from "@/store/useCartStore";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 interface ProductCardProps {
   product: Product;
@@ -13,6 +14,7 @@ interface ProductCardProps {
 
 export function ProductCard({ product, showAddToCart = true }: ProductCardProps) {
   const addItem = useCartStore((s) => s.addItem);
+  const { track } = useAnalytics();
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-md">
@@ -52,7 +54,16 @@ export function ProductCard({ product, showAddToCart = true }: ProductCardProps)
             </Link>
             <button
               type="button"
-              onClick={() => addItem(product.id)}
+              onClick={() => {
+                addItem(product.id);
+                track("add_to_cart", {
+                  product_id: product.id,
+                  product_name: product.name,
+                  product_sku: product.sku,
+                  product_category: product.category,
+                  product_brand: product.brand,
+                });
+              }}
               className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent text-white transition-all duration-200 hover:-translate-y-px hover:bg-accent-dark"
               aria-label={`Add ${product.name} to cart`}
             >

@@ -3,6 +3,7 @@
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import { Download } from "lucide-react";
 import { CartPdf } from "@/components/CartPdf";
+import { useAnalytics } from "@/hooks/useAnalytics";
 import { CartItem, ConfigurationDraft, Product, QuoteRequest } from "@/types";
 
 interface QuotePdfDownloadProps {
@@ -22,8 +23,19 @@ export function QuotePdfDownload({
   quote,
   submittedAt,
 }: QuotePdfDownloadProps) {
+  const { track } = useAnalytics();
+
   return (
-    <PDFDownloadLink
+    <span
+      onClick={() =>
+        track("pdf_downloaded", {
+          reference_id: referenceId,
+          product_count: items.reduce((sum, i) => sum + i.quantity, 0),
+          email: quote.email,
+        })
+      }
+    >
+      <PDFDownloadLink
       document={
         <CartPdf
           items={items}
@@ -39,5 +51,6 @@ export function QuotePdfDownload({
     >
       <Download className="h-4 w-4" /> Download PDF
     </PDFDownloadLink>
+    </span>
   );
 }
