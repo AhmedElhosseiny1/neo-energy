@@ -401,29 +401,14 @@ export default function HomePage() {
                 proposal covering products, system design, and next steps.
               </p>
             </div>
-            <div className="flex items-center">
-              <form className="w-full space-y-4 rounded-2xl bg-white/5 p-6 backdrop-blur-sm">
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <input
-                    type="text"
-                    placeholder="Full Name"
-                    className="rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/50 focus:border-accent focus:outline-none"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Email Address"
-                    className="rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/50 focus:border-accent focus:outline-none"
-                  />
-                </div>
-                <textarea
-                  rows={4}
-                  placeholder="Tell us about your project..."
-                  className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/50 focus:border-accent focus:outline-none"
-                />
-                <Button href="/quote" className="w-full">
-                  Request a Quote
-                </Button>
-              </form>
+            <div className="flex flex-col justify-center gap-6">
+              <p className="text-background/80">
+                Browse our engineering catalog, select the components that fit
+                your project, and submit a quotation request in minutes.
+              </p>
+              <Button href="/quote" className="w-full sm:w-auto">
+                Request a Quote
+              </Button>
             </div>
           </div>
         </div>
