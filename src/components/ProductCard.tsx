@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ShoppingCart, SlidersHorizontal } from "lucide-react";
+import { SlidersHorizontal } from "lucide-react";
 import { Product } from "@/types";
 import { useCartStore } from "@/store/useCartStore";
 import { useAnalytics } from "@/hooks/useAnalytics";
+import { AddToCartFeedback } from "@/components/AddToCartFeedback";
 
 interface ProductCardProps {
   product: Product;
@@ -52,9 +53,9 @@ export function ProductCard({ product, showAddToCart = true }: ProductCardProps)
               Configure Solution
               <SlidersHorizontal className="h-4 w-4" />
             </Link>
-            <button
-              type="button"
-              onClick={() => {
+            <AddToCartFeedback
+              productName={product.name}
+              onAdd={() => {
                 addItem(product.id);
                 track("add_to_cart", {
                   product_id: product.id,
@@ -64,11 +65,7 @@ export function ProductCard({ product, showAddToCart = true }: ProductCardProps)
                   product_brand: product.brand,
                 });
               }}
-              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent text-white transition-all duration-200 hover:-translate-y-px hover:bg-accent-dark"
-              aria-label={`Add ${product.name} to cart`}
-            >
-              <ShoppingCart className="h-4 w-4" />
-            </button>
+            />
           </div>
         )}
       </div>
