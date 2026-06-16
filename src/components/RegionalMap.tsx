@@ -105,12 +105,12 @@ export function RegionalMap() {
         </div>
 
         <div
-          className="relative mx-auto mt-12 aspect-[1000/647] w-full max-w-5xl overflow-hidden rounded-3xl border border-border bg-white shadow-sm"
+          className="relative mx-auto mt-12 aspect-[110/85] w-full max-w-6xl overflow-hidden rounded-3xl border border-border bg-white shadow-sm"
           onMouseEnter={stopCycle}
           onMouseLeave={startCycle}
         >
           <svg
-            viewBox="0 0 1000 647"
+            viewBox="550 328 110 85"
             className="absolute inset-0 h-full w-full"
             role="img"
             aria-label="Interactive map of solar deliveries across Egypt, Lebanon, Syria, and Iraq"
@@ -131,8 +131,8 @@ export function RegionalMap() {
               </radialGradient>
             </defs>
 
-            <rect width="1000" height="647" fill="url(#grid)" />
-            <rect width="1000" height="647" fill="url(#mapGlow)" />
+            <rect x="550" y="328" width="110" height="85" fill="url(#grid)" />
+            <rect x="550" y="328" width="110" height="85" fill="url(#mapGlow)" />
 
             {/* Country shapes */}
             {regions.map((region, index) => {
@@ -182,8 +182,8 @@ export function RegionalMap() {
           <div
             className="pointer-events-none absolute z-10 w-52 -translate-x-1/2 -translate-y-full rounded-2xl border border-border bg-white p-4 shadow-md transition-all duration-500"
             style={{
-              left: `${(active.markerX / 1000) * 100}%`,
-              top: `${(active.markerY / 647) * 100 - 5}%`,
+              left: `${((active.markerX - 550) / 110) * 100}%`,
+              top: `${((active.markerY - 328) / 85) * 100 - 5}%`,
             }}
           >
             <p className="text-3xl font-semibold text-accent">{active.value}</p>
