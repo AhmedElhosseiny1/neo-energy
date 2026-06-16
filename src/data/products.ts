@@ -21,7 +21,7 @@ export const catalogProducts: Product[] = [
       "High-performance solar panel from JA Solar for residential, commercial, and utility-scale projects.",
     fullDescription:
       "The JA Solar 605W module is part of Neo Energy's solar panel lineup, offering high power output and durable construction suitable for a range of solar energy projects.",
-    image: "/images/pv-infrastructure.jpg",
+    image: "/images/solar-panels.jpg",
     specs: [{ label: "Module Power", value: "605 Wp" }],
     powerKw: 0.605,
     capacityKwh: 0,
@@ -43,7 +43,7 @@ export const catalogProducts: Product[] = [
       "High-efficiency Longi solar panel designed for reliable energy generation across project types.",
     fullDescription:
       "The Longi 605W (LR7-72HTH) panel delivers high efficiency and long-term reliability for residential, commercial, and utility-scale solar installations.",
-    image: "/images/pv-infrastructure.jpg",
+    image: "/images/solar-panels.jpg",
     specs: [{ label: "Module Power", value: "605 Wp" }],
     powerKw: 0.605,
     capacityKwh: 0,
@@ -65,7 +65,7 @@ export const catalogProducts: Product[] = [
       "Locally manufactured certified panel balancing quality and affordability.",
     fullDescription:
       "Jet Solar 580W panels are locally manufactured certified modules that balance quality and affordability for solar energy projects in the region.",
-    image: "/images/pv-infrastructure.jpg",
+    image: "/images/solar-panels.jpg",
     specs: [{ label: "Module Power", value: "580 Wp" }],
     powerKw: 0.58,
     capacityKwh: 0,
@@ -89,7 +89,7 @@ export const catalogProducts: Product[] = [
       "5 kWh lithium phosphate wall-mounted battery with smart communication and long cycle life.",
     fullDescription:
       "The LPBF (24200-M) is a 5 kWh lithium phosphate wall-mounted battery designed for residential, commercial, and industrial energy storage systems.",
-    image: "/images/lfp-battery.jpg",
+    image: "/images/battery-install.jpg",
     specs: [
       { label: "Type", value: "Lithium phosphate, wall-mounted battery" },
       { label: "Capacity", value: "5 kWh" },
@@ -121,7 +121,7 @@ export const catalogProducts: Product[] = [
       "7.5 kWh lithium phosphate battery with smart BMS, LCD display, and 7-year warranty.",
     fullDescription:
       "The FLA (24300) is a 7.5 kWh lithium phosphate battery available in wall-mounted and floor-mounted configurations. It features a smart BMS, built-in breakers and fuse, and CAN/RS485 communication.",
-    image: "/images/lfp-battery.jpg",
+    image: "/images/battery-install.jpg",
     specs: [
       { label: "Type", value: "Lithium phosphate, wall-mounted and floor-mounted battery" },
       { label: "Capacity", value: "7.5 kWh" },
@@ -155,7 +155,7 @@ export const catalogProducts: Product[] = [
       "15 kWh floor-mounted lithium phosphate battery with smart BMS and 7-year warranty.",
     fullDescription:
       "The FLA (48300) is a 15 kWh floor-mounted lithium phosphate battery designed for larger residential, commercial, and industrial energy storage applications.",
-    image: "/images/lfp-battery.jpg",
+    image: "/images/battery-install.jpg",
     specs: [
       { label: "Type", value: "Lithium phosphate, floor-mounted battery" },
       { label: "Capacity", value: "15 kWh" },
@@ -189,7 +189,7 @@ export const catalogProducts: Product[] = [
       "200 Ah / 2.56 kWh lithium phosphate battery with 7-year warranty.",
     fullDescription:
       "The FLA (12200) is a compact lithium phosphate battery offering 200 Ah / 2.56 kWh capacity, suitable for smaller backup power and energy storage needs.",
-    image: "/images/lfp-battery.jpg",
+    image: "/images/battery-install.jpg",
     specs: [
       { label: "Capacity", value: "200 Ah / 2.56 kWh" },
       { label: "Voltage Range", value: "Contact us" },
@@ -217,7 +217,7 @@ export const catalogProducts: Product[] = [
       "Solar pumping inverter series designed for efficient and reliable water-pumping applications.",
     fullDescription:
       "The FRECON PV500 Series Solar Pumping Inverter is designed for efficient and reliable solar water-pumping applications, converting solar energy into usable electricity for agricultural and remote pumping systems.",
-    image: "/images/industrial-inverter.jpg",
+    image: "/images/inverter-install.jpg",
     specs: [
       { label: "Application", value: "Solar water pumping" },
       { label: "Series", value: "FRECON PV500" },
@@ -245,7 +245,7 @@ export const catalogProducts: Product[] = [
       "Reliable single-core flexible DC solar cable for photovoltaic systems.",
     fullDescription:
       "Elsewedy H1Z2Z2-K is a reliable single-core flexible DC solar cable for photovoltaic systems. Suitable for residential rooftops, commercial plants, and industrial solar installations.",
-    image: "/images/utility.jpg",
+    image: "/images/solar-cables.jpg",
     specs: [
       { label: "Voltage Rating", value: "Up to 1.8 kV DC to earth" },
       { label: "Expected Lifetime", value: "25+ years" },
@@ -280,7 +280,7 @@ export const catalogProducts: Product[] = [
       "Compact plug-and-play ESS with built-in MPPT and safe storage.",
     fullDescription:
       "The Felicity Solar All-in-One ESS 5kWh combines inverter, battery, and MPPT controller into one integrated unit. Its compact plug-and-play design with built-in MPPT and safe storage makes it ideal for homes and small offices.",
-    image: "/images/containerized-bess.jpg",
+    image: "/images/all-in-one-ess.jpg",
     specs: [
       { label: "Capacity", value: "5 kWh" },
       { label: "Design", value: "Plug-and-play" },
@@ -307,7 +307,7 @@ export const catalogProducts: Product[] = [
       "Higher storage capacity with modular design and smart protection.",
     fullDescription:
       "The Felicity Solar All-in-One ESS 10kWh offers higher storage capacity with a modular design and smart protection, suitable for homes, villas, and small commercial projects.",
-    image: "/images/containerized-bess.jpg",
+    image: "/images/all-in-one-ess.jpg",
     specs: [
       { label: "Capacity", value: "10 kWh" },
       { label: "Design", value: "Modular" },
@@ -334,7 +334,7 @@ export const catalogProducts: Product[] = [
       "Medium-scale ESS for villas, offices, and medium-scale energy needs.",
     fullDescription:
       "The Felicity Solar All-in-One ESS 15kWh is designed for villas, offices, and medium-scale energy needs, delivering scalable storage with intelligent BMS and monitoring.",
-    image: "/images/containerized-bess.jpg",
+    image: "/images/all-in-one-ess.jpg",
     specs: [
       { label: "Capacity", value: "15 kWh" },
       { label: "Design", value: "Scalable" },
@@ -361,7 +361,7 @@ export const catalogProducts: Product[] = [
       "Larger-capacity option for farms, schools, and commercial facilities.",
     fullDescription:
       "The Felicity Solar All-in-One ESS 20kWh is a larger-capacity option for farms, schools, and commercial facilities, combining inverter, battery, and MPPT in one safe and scalable unit.",
-    image: "/images/containerized-bess.jpg",
+    image: "/images/all-in-one-ess.jpg",
     specs: [
       { label: "Capacity", value: "20 kWh" },
       { label: "Design", value: "Scalable" },
@@ -390,7 +390,7 @@ export const catalogProducts: Product[] = [
       "Integrated outdoor solar lighting solution combining solar panel, LiFePO4 battery, and LED.",
     fullDescription:
       "The A3 Series solar street light combines a solar panel, LiFePO4 battery, and LED lighting into an integrated outdoor lighting solution.",
-    image: "/images/facility.jpg",
+    image: "/images/solar-street-light.jpg",
     specs: [
       { label: "Series", value: "A3" },
       { label: "Technology", value: "Solar panel + LiFePO4 battery + LED" },
@@ -416,7 +416,7 @@ export const catalogProducts: Product[] = [
       "Integrated outdoor solar lighting solution for public and commercial spaces.",
     fullDescription:
       "The F1 Series solar street light offers integrated outdoor lighting with solar panel, LiFePO4 battery, and LED technology for public and commercial spaces.",
-    image: "/images/facility.jpg",
+    image: "/images/solar-street-light.jpg",
     specs: [
       { label: "Series", value: "F1" },
       { label: "Technology", value: "Solar panel + LiFePO4 battery + LED" },
@@ -442,7 +442,7 @@ export const catalogProducts: Product[] = [
       "Upgraded solar street light line with integrated solar, battery, and LED technology.",
     fullDescription:
       "The F1A Series upgraded line delivers enhanced outdoor solar lighting performance with integrated solar panel, LiFePO4 battery, and LED technology.",
-    image: "/images/facility.jpg",
+    image: "/images/solar-street-light.jpg",
     specs: [
       { label: "Series", value: "F1A Upgraded Line" },
       { label: "Technology", value: "Solar panel + LiFePO4 battery + LED" },
@@ -468,7 +468,7 @@ export const catalogProducts: Product[] = [
       "Integrated outdoor solar lighting solution for public, commercial, and outdoor projects.",
     fullDescription:
       "The P3 Series solar street light combines solar panel, LiFePO4 battery, and LED technology into an integrated outdoor lighting solution for a variety of outdoor projects.",
-    image: "/images/facility.jpg",
+    image: "/images/solar-street-light.jpg",
     specs: [
       { label: "Series", value: "P3" },
       { label: "Technology", value: "Solar panel + LiFePO4 battery + LED" },

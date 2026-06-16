@@ -50,19 +50,19 @@ export default function HomePage() {
       title: "Egypt",
       description:
         "Headquarters and growing local distribution network serving solar projects nationwide.",
-      image: "/images/engineer.jpg",
+      image: "/images/service-on-grid.jpg",
     },
     {
       title: "Levant & Iraq",
       description:
         "Regional deliveries and project support across Lebanon, Syria, Jordan, and Iraq.",
-      image: "/images/facility.jpg",
+      image: "/images/service-epc.jpg",
     },
     {
       title: "North Africa & Sudan",
       description:
         "Expanding solar access and energy solutions across Sudan and North Africa.",
-      image: "/images/utility.jpg",
+      image: "/images/hero-solar-farm.jpg",
     },
   ];
 
@@ -71,8 +71,8 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative flex min-h-[600px] items-center overflow-hidden rounded-b-3xl">
         <Image
-          src="/images/hero.jpg"
-          alt="Solar installation"
+          src="/images/hero-solar-farm.jpg"
+          alt="Solar farm installation"
           fill
           className="object-cover"
           priority
@@ -247,8 +247,8 @@ export default function HomePage() {
 
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
             <Image
-              src="/images/engineer.jpg"
-              alt="Neo Energy installation team"
+              src="/images/about-engineer.jpg"
+              alt="Neo Energy engineer"
               fill
               className="object-cover"
               loading="eager"
